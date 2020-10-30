@@ -1,19 +1,19 @@
 [
     {
         "titleEN": "Calculator",
-        "descriptionEN": "A calculator made with pure JS, evaluating the calculation with algorithims of my own design using recursion.",
+        "descriptionEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "calc.png",
         "id": "0"
     },
     {
-        "titleEN": "Ray Casting Test",
-        "descriptionEN": "Ray casting tests made with pure JS, accompanied with polygon generation & modification options and stylization options.",
+        "titleEN": "Ray Casting Tests",
+        "descriptionEN": "Ray casting tests made with JS. Applied to simulate shadows.",
         "image": "raycast.png",
         "id": "1"
     },
     {
         "titleEN": "Circle Collision Test",
-        "descriptionEN": "A circle collision sim test, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
+        "descriptionEN": "A circle collision simulation test made with JS, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
         "image": "balls.png", 
         "id": "2"
     },
@@ -24,20 +24,20 @@
         "id": "3"
     },
     {
-        "titleEN": "ASCII Chess",
-        "descriptionEN": "A locally played chess game made with java.",
-        "image": "chess.png",
-        "id": "4"
-    },
-    {
         "titleEN": "Portfolio",
         "descriptionEN": "A website created with React and Bootstrap as a learning experience and a way to showcase skills.",
         "image": "site.png", 
         "id": "5"
     },
     {
+        "titleEN": "ASCII Chess",
+        "descriptionEN": "A locally played chess game made with Java.",
+        "image": "chess.png",
+        "id": "4"
+    },
+    {
         "titleEN": "Webshop API",
-        "descriptionEN": "REST API done with php and communicated with via JS.",
+        "descriptionEN": "A REST API done with PHP and communicated with via JS.",
         "image": "rajapinta.png", 
         "id": "6"
     }
