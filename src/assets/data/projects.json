@@ -1,0 +1,44 @@
+[
+    {
+        "titleEN": "Calculator",
+        "descriptionEN": "A calculator made with pure JS, evaluating the calculation with algorithims of my own design using recursion.",
+        "image": "calc.png",
+        "id": "0"
+    },
+    {
+        "titleEN": "Ray Casting Test",
+        "descriptionEN": "Ray casting tests made with pure JS, accompanied with polygon generation & modification options and stylization options.",
+        "image": "raycast.png",
+        "id": "1"
+    },
+    {
+        "titleEN": "Circle Collision Test",
+        "descriptionEN": "A circle collision sim test, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
+        "image": "balls.png", 
+        "id": "2"
+    },
+    {
+        "titleEN": "Peek 0.9",
+        "descriptionEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
+        "image": "mine.png",
+        "id": "3"
+    },
+    {
+        "titleEN": "ASCII Chess",
+        "descriptionEN": "A locally played chess game made with java.",
+        "image": "chess.png",
+        "id": "4"
+    },
+    {
+        "titleEN": "Portfolio",
+        "descriptionEN": "A website created with React and Bootstrap as a learning experience and a way to showcase skills.",
+        "image": "site.png", 
+        "id": "5"
+    },
+    {
+        "titleEN": "Webshop API",
+        "descriptionEN": "REST API done with php and communicated with via JS.",
+        "image": "rajapinta.png", 
+        "id": "6"
+    }
+]

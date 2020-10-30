@@ -1,0 +1,36 @@
+[
+    {
+        "id": "0",
+        "title": "About",
+        "birth": "13 Aug 1991",
+        "home": "Pori",
+        "name": "Eetu Salli",
+        "countryEN": "Finland",
+        "image": "profile.jpg",
+        "hobbiesEN": "I've been around computers near-literally my whole life, having various hobbies and interests involving them. I've always been an avid PC gamer, going through fpses, morpgs and mobas. I've also played guitar for the better part of my life. Movies and series definitely also list in my interests.",
+        "hobbiesToolTipEN": "(I can guarantee being a valuable addition to any workplace team in any game.)",
+        "experienceEN": "My first touch with programming was with CoolBasic as a kid, but had a long hiatus since. My return to the field was taking programming studies while studying to be a classroom teacher at Rauma. That is when I found myself loving it. After rekindling the passion I've studied Python, Java, JavaScript, HTML and CSS. Currently I'm learning React and Bootstrap, both of which are used in this site. My clear strengths are self-learning, finding information, learning fast, applying learnt things in creative ways and always aiming for understanding rather than remembering. Most of my skills have been acquired by remote studying and self-learning."
+    },
+    {
+        "id": "1",
+        "title": "Projects",
+        "birth": "13.08.1991",
+        "home": "Pori",
+        "countryEN": "Finland",
+        "image": "placeholder.png",
+        "hobbiesEN": "I've been around computers near-literally my whole life, having various hobbies and interests involving them. I've always been an avid PC gamer, going through fpses, morpgs and mobas. I've also played guitar for the better part of my life. Movies and series definitely also list in my interests.",
+        "hobbiesToolTipEN": "(I can guarantee being a valuable addition to any workplace team in any game.)",
+        "experienceEN": "My first touch with programming was with CoolBasic as a kid, but had a long hiatus since. My return to the field was taking programming studies while studying to be a classroom teacher at Rauma. That is when I found myself loving it. <br> After rekindling the passion I've studied Python, Java, JavaScript, HTML and CSS. Currently I'm learning React and Bootstrap, both of which are used in this site.<br> My clear strengths are self-learning, finding information, learning fast, applying learnt things in creative ways and always aiming for understanding rather than remembering. Most of my skills have been acquired by remote studying and self-learning."
+    },
+    {
+        "id": "2",
+        "title": "Contact",
+        "birth": "13.08.1991",
+        "home": "Pori",
+        "countryEN": "Finland",
+        "image": "placeholder.png",
+        "hobbiesEN": "I've been around computers near-literally my whole life, having various hobbies and interests involving them. I've always been an avid PC gamer, going through fpses, morpgs and mobas. I've also played guitar for the better part of my life. Movies and series definitely also list in my interests.",
+        "hobbiesToolTipEN": "(I can guarantee being a valuable addition to any workplace team in any game.)",
+        "experienceEN": "My first touch with programming was with CoolBasic as a kid, but had a long hiatus since. My return to the field was taking programming studies while studying to be a classroom teacher at Rauma. That is when I found myself loving it. <br> After rekindling the passion I've studied Python, Java, JavaScript, HTML and CSS. Currently I'm learning React and Bootstrap, both of which are used in this site.<br> My clear strengths are self-learning, finding information, learning fast, applying learnt things in creative ways and always aiming for understanding rather than remembering. Most of my skills have been acquired by remote studying and self-learning."
+    }
+]
