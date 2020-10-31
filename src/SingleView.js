@@ -1,7 +1,7 @@
 import React from 'react';
 import data from './assets/data/projects.json';
-import Card from 'react-bootstrap/Card';
 import useSite from './useSite';
+
 
 const SingleView = () => {
     const {projectView} = useSite();
@@ -25,7 +25,9 @@ const SingleView = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <img src={require(`./assets/images/${pr.image}`)} alt=""></img>
+                    <div style={{overflow:"hidden"}}>
+                        <img src={require(`./assets/images/${pr.image}`)} alt=""></img>
+                    </div>
                 </div>
             </div>
         </div>
