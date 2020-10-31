@@ -35,7 +35,7 @@ const About = () => {
                 
                 <b>My strengths</b>, I think, are self-learning, finding information, learning fast, applying learnt things in creative ways and always aiming for understanding rather than remembering. Most of my journey as a programmer has been self-learning or remote learning, so I feel pretty comfortable charging the unknown. I also have a strong background in mathematic which helps in certain tasks.<br></br><br></br>
                 
-                <b>My future is open</b> and I still don't know what I exactly want as a career a programmer. I'm looking forward to continuing to grow as coder and develope a more coherent view of the sub-categories in the field.
+                <b>My future is open</b> and I still don't know what I exactly want from my career as a programmer. I'm looking forward to continuing to grow as coder and develope a more coherent view of the sub-categories in the field.
                 </p>
             )
         }

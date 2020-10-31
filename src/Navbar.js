@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from './Link';
-import SecondNav from './SecondNav';
 import style from './style.js'
-import useSite from './useSite';
 
 
 
