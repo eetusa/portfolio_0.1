@@ -1,45 +1,45 @@
 [
-    {
-        "titleEN": "Calculator",
-        "descriptionEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "calc.png",
-        "id": "0"
-    },
-    {
-        "titleEN": "Ray Casting Tests",
-        "descriptionEN": "Ray casting tests made with JS. Applied to simulate shadows.",
-        "image": "raycast.png",
-        "id": "1",
-        "body":"Ray casting tests that began as an interest to the technique and ended up as a nice looking visual experience. I have some plans to implement the technique and visual style to a simple game engine as an exercise, as I think the look could be pretty cool in an interactive world. The program was done with pure JavaScript drawing on a canvas. The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow. In the demo you can choose to view the rays that are being cast or ray-to-object collision points. You can also change the visual style and play around with the polygon generation or create your own polygons."
-    },
-    {
-        "titleEN": "Circle Collision Test",
-        "descriptionEN": "A circle collision simulation test made with JS, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
-        "image": "balls.png", 
-        "id": "2"
-    },
-    {
-        "titleEN": "Peek 0.9",
-        "descriptionEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
-        "image": "mine.png",
-        "id": "3"
-    },
-    {
-        "titleEN": "Portfolio",
-        "descriptionEN": "A website created with React and Bootstrap as a learning experience and a way to showcase skills.",
-        "image": "site.png", 
-        "id": "5"
-    },
-    {
-        "titleEN": "ASCII Chess",
-        "descriptionEN": "A locally played chess game made with Java.",
-        "image": "chess.png",
-        "id": "4"
-    },
-    {
-        "titleEN": "Webshop API",
-        "descriptionEN": "A REST API done with PHP and communicated with via JS.",
-        "image": "rajapinta.png", 
-        "id": "6"
-    }
+  {
+    "titleEN": "Calculator",
+    "descriptionEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
+    "image": "calc.png",
+    "id": "0"
+  },
+  {
+    "titleEN": "Ray Casting Tests",
+    "descriptionEN": "Ray casting tests made with JS. Applied to simulate shadows.",
+    "image": "raycast.png",
+    "id": "1",
+    "body": "Ray casting tests that began as an interest to the technique and ended up as a nice looking visual experience. I have some plans to implement the technique and visual style to a simple game engine as an exercise, as I think the look could be pretty cool in an interactive world. The program was done with pure JavaScript drawing on a canvas. The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow. In the demo you can choose to view the rays that are being cast or ray-to-object collision points. You can also change the visual style and play around with the polygon generation or create your own polygons."
+  },
+  {
+    "titleEN": "Circle Collision Test",
+    "descriptionEN": "A circle collision simulation test made with JS, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
+    "image": "balls.png",
+    "id": "2"
+  },
+  {
+    "titleEN": "Peek 0.9",
+    "descriptionEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
+    "image": "mine.png",
+    "id": "3"
+  },
+  {
+    "titleEN": "ASCII Chess",
+    "descriptionEN": "A locally played chess game made with Java.",
+    "image": "chess.png",
+    "id": "4"
+  },
+  {
+    "titleEN": "Portfolio",
+    "descriptionEN": "A website created with React and Bootstrap as a learning experience and a way to showcase skills.",
+    "image": "site.png",
+    "id": "5"
+  },
+  {
+    "titleEN": "Webshop API",
+    "descriptionEN": "A REST API done with PHP and communicated with via JS.",
+    "image": "rajapinta.png",
+    "id": "6"
+  }
 ]
