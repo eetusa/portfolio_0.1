@@ -3,15 +3,19 @@ import data from './assets/data/projects.json';
 import useSite from './useSite';
 import useWindowDimensions from './useWindowDimensions';
 import Image from 'react-bootstrap/Image'
+import { useParams } from "react-router-dom";
 
 
 const SingleView = () => {
-    const {projectView} = useSite();
     const {width} = useWindowDimensions();
+    const { projectView } = useSite();
+    const { id } = useParams();
     const lang = "EN";
-    const index = projectView;
-
+    // const index = projectView;
+    const index = id;
     const pr = data[index];
+
+   
 
     if (lang === "EN"){
         data.map ( (data )  => {
@@ -21,7 +25,6 @@ const SingleView = () => {
             )
         })
     } else {
-
     }
 
     return (
@@ -42,7 +45,9 @@ const SingleView = () => {
                 </div>
             </div>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default SingleView;
