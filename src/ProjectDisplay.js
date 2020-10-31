@@ -8,12 +8,8 @@ import SingleView from './SingleView';
 const ProjectDisplay = () => {
     const {projectStyle} = useSite();
     
-    return (
-        <div>
-            {projectStyle === false && <GridView/>}
-            {projectStyle && <SingleView/>}
-        </div>
-    );
+    return projectStyle ? <SingleView/> : <GridView/>
+    
 }
 
 export default ProjectDisplay;
