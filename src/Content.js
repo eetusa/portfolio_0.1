@@ -1,17 +1,39 @@
 import React from "react";
-import DisplayComponent from "./displayComponent";
-import useSite from "./useSite";
-import data from "./assets/data/sitedata.json";
 import GridButton from "./GridButton";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import About from "./About";
 import ProjectDisplay from "./ProjectDisplay";
 import Contact from "./Contact";
-// import style from './style.js'
+import data from "./assets/data/projects.json";
 
 const Content = () => {
-  const { view } = useSite();
-  const title = data[view].title;
+
+  const resourceTitle = (e) => {
+    if (e.indexOf(' ')===-1){
+      return (e[0].toLowerCase()+e.slice(1));
+    } else{
+      let temp = e[0].toLowerCase();
+      for (let i = 1; i < e.length; i++){
+        if (e[i]===" "){
+          temp += "_";
+        } else if (e[i]==="."){
+          temp += "-";
+        } else{
+          temp += e[i].toLowerCase();
+        }
+      }
+      return temp;
+    }
+  }
+
+  const id = useLocation();
+  let title = id.pathname.slice(1,2).toUpperCase()+id.pathname.slice(2);
+  if (title.indexOf("/")>-1){
+    title = title.slice(0,title.indexOf("/"));
+  }
+  
+
+  
 
   return (
     <div
@@ -28,12 +50,12 @@ const Content = () => {
             whiteSpace: "nowrap",
             overflow: "hidden",
             background: "rgb(230,230,230)",
-            color: "rgba(255,255,255,0.5)",
+            color: "rgba(100,100,100,0.7)",
             height: "20px",
             position: "relative",
           }}
         >
-          <div className="my-auto display-4" style={{ position: "absolute" }}>
+          <div className="my-auto display-4" style={{ fontSize:"50px", position: "absolute", bottom:"-70%" }}>
             {title}
           </div>
           <div></div>
@@ -43,8 +65,9 @@ const Content = () => {
         </div>
       </div>
 
-      {/* <DisplayComponent id={view} /> */}
       <Switch>
+        <Route exact path="/"><Redirect to="/home"/></Route>
+        <Route path="/home">Home.</Route>
         <Route path="/about">
           <About />
         </Route>
@@ -56,8 +79,8 @@ const Content = () => {
         </Route>
       </Switch>
 
-      {view === 1 && (
-        <div style={{ position: "absolute", top: "20px", right: "0%" }}>
+      {id.pathname.indexOf("projects")>0 && (
+        <div style={{ position: "absolute", top: "18px", right: "0%" }}>
           <div style={{ position: "relative" }}>
             <GridButton />
           </div>

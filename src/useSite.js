@@ -17,7 +17,13 @@ const useSite = () =>{
         setState({...state, projectStyle: e})
     };
 
+    const setProjectState = (e) => {
+        setState({...state, projectState: e});
+    }
+
     return {
+        setProjectState,
+        projectState: state.projectState,
         setView,
         view: state.view,
         setProjectView,

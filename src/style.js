@@ -46,7 +46,7 @@ const styles = ({
     wholeNav: {
         margin: "20px 10px 20px 10px",
         display: "flex", 
-        flexDirection: "column",
+        justifyContent: "space-evenly", 
         width: normalWidth,
     },
     firstNav: {

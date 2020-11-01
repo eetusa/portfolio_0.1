@@ -7,6 +7,7 @@ const SiteProvider = ({children}) => {
         view: 1,
         projectView: 0,
         projectStyle: false,
+        projectState: ["calculator", false],
     })
 
     return (

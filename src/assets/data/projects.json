@@ -2,51 +2,84 @@
     {
         "titleEN": "Calculator",
         "descriptionEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
+        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "calc.png",
         "banner": "calc_banner.png",
+        "banner_100": "calc_banner_100.png",
+        "banner_150": "calc_banner_150.png",
+        "demo": "/assets/projects/calculator0.9/index.html",
         "id": "0"
     },
     {
         "titleEN": "Ray Casting Tests",
         "descriptionEN": "Ray casting tests made with JS. Applied to simulate shadows.",
+        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "raycast.png",
         "banner": "raycast_banner.png",
+        "banner_100": "raycast_banner_100.png",
+        "banner_150": "raycast_banner_150.png",
+        "demo": "/assets/projects/raycast_1.1/index.html",
         "id": "1",
         "body":"Ray casting tests that began as an interest to the technique and ended up as a nice looking visual experience. I have some plans to implement the technique and visual style to a simple game engine as an exercise, as I think the look could be pretty cool in an interactive world. The program was done with pure JavaScript drawing on a canvas. The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow. In the demo you can choose to view the rays that are being cast or ray-to-object collision points. You can also change the visual style and play around with the polygon generation or create your own polygons."
     },
     {
         "titleEN": "Circle Collision Test",
         "descriptionEN": "A circle collision simulation test made with JS, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
+        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "balls.png",
         "banner": "balls_banner.png",
+        "banner_100": "balls_banner_100.png",
+        "banner_150": "balls_banner_150.png",
         "id": "2"
     },
     {
         "titleEN": "Peek 0.9",
         "descriptionEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
-        "image": "mine.png",
+        "bodyEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
+        "image": "mine/mine.png",
+        "images": [
+                    {
+                        "img": "mine/mine.png"
+                    },
+                    {
+                        "img": "mine/mine.png"
+                    }
+                ],
+        "video": "minevideo.webm",
         "banner": "mine_banner.png",
+        "banner_100": "mine_banner_100.png",
+        "banner_150": "mine_banner_150.png",
         "id": "3"
     },
     {
         "titleEN": "Portfolio",
         "descriptionEN": "A website created with React and Bootstrap as a learning experience and a way to showcase skills.",
+        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "site.png",
         "banner": "site_banner.png", 
-        "id": "5"
+        "banner_100": "mine_banner_100.png",
+        "banner_150": "mine_banner_150.png",
+        
+        "id": "4"
     },
     {
         "titleEN": "ASCII Chess",
         "descriptionEN": "A locally played chess game made with Java.",
+        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "chess.png",
         "banner": "chess_banner.png",
-        "id": "4"
+        "banner_100": "chess_banner_100.png",
+        "banner_150": "chess_banner_150.png",
+        "id": "5"
     },
     {
         "titleEN": "Webshop API",
         "descriptionEN": "A REST API done with PHP and communicated with via JS.",
+        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "rajapinta.png",
         "banner": "rajapinta_banner.png", 
+        "banner_100": "rajapinta_banner_100.png",
+        "banner_150": "rajapinta_banner_150.png",
         "id": "6"
     }
 ]
