@@ -12,6 +12,16 @@ canvas.height= canvas.offsetHeight;
 const width = canvas.width;
 const height = canvas.height;
 
+canvas.width = innerWidth;
+canvas.height= innerHeight;
+
+addEventListener("mousemove", function(event){
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+});
+
+
+
 
 
 // Variablesss
@@ -280,7 +290,6 @@ function handleClick(e){
 
 // Implementation
 
-
 let walls = [];
 let polygons = [];
 let raychecks = [];
@@ -289,9 +298,25 @@ let movables = [];
 let moving = [];
 let tempPoints  = [];
 
-let intersections = [];
 
 function init(){
+
+walls=[];
+polygons = [];
+raychecks = [];
+source = {};
+movables = [];
+moving = [];
+tempPoints  = [];
+
+let intersections = [];
+
+    addEventListener("resize",function(){
+        canvas.width = innerWidth;
+        canvas.height= innerHeight;
+    
+        init();
+    });
     // walls.push( new Boundary(200,200,100,100) );
    
     canvas.addEventListener('mousedown', e => {
