@@ -915,7 +915,7 @@ function setOperand(str){
 		}
 				
     //drawParent(openparent);
-    document.getElementById("temp").innerHTML = display;
+    // document.getElementById("temp").innerHTML = display;
     printDisplay(display);
   }
 }
@@ -949,7 +949,7 @@ function setChar(str){
       }
       
     printDisplay(display);
-     document.getElementById("temp").innerHTML = display;
+    //  document.getElementById("temp").innerHTML = display;
    
     }
 } 

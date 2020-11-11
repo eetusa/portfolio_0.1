@@ -15,6 +15,20 @@
     </head>
 
     <body>
+        <div id="wrapper">
+            <div id="controlPanel">
+                <div id="buttons">
+                    <button>Clear canvas</button>
+                    <button>Toggle "darkmask"</button>
+                    <button>Generate 10 random polygons</button>
+                    <button>Show/hide rays</button>
+                    <button>Show/hide ray-to-object collision points</button>
+                    <button>Draw polygon</button>
+                </div>
+                <div id="info">
+                    Click to drag polygons. When drawing, don't cross the lines of the polygon you are drawing.
+                </div>
+            </div>
         <canvas id="canvas"></canvas>
         <div id="displayWrap">
             <div id="display">
@@ -32,5 +46,6 @@
         <script src="scripts/lightmask.js"></script>
         <script src="scripts/cirlce.js"></script>
         <script src="scripts/canvas.js"></script>
+    </div>
     </body>
 </html>

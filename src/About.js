@@ -1,20 +1,33 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import data from './assets/data/sitedata.json'
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import parse from 'html-react-parser';
 import { Overlay } from 'react-bootstrap';
+import useSite from "./useSite";
 
 
 
 const About = () => {
-    
+    const {projectState, setProjectState} = useSite();
     const a = data[0];
     const lang = "EN";
     let name, hobbies, age, city, country, experience;
     const [show, setShow] = useState(false);
     const target = useRef(null);
 
+    useEffect(() => {
+        let changed = false;
+        let temp = [...projectState]
+        if (projectState[2]===true){
+            temp[2] = false;
+            changed=true;
+        }
+
+        if (changed){
+            setProjectState(temp);
+        }
+    })
 
 
     // add effects to text
@@ -31,7 +44,7 @@ const About = () => {
 
             }
         }
-        return <p>{parse(result)}</p>;
+        return parse(result);
     }
 
     
@@ -79,58 +92,56 @@ const About = () => {
         a.country = a.countryEN;
         a.hobbies = a.hobbiesEN;
         
-        experience = () => {
-            return(
-                <div className="lead">
-                    <BeutifyAbout 
-                    str="<b>My first touch with programming</b> was with CoolBasic as a kid, but had a long hiatus since. My return to the field was when I took programming studies while studying to be a classroom teacher at Rauma, Finland. That is when I found myself loving the problem solving, the never-ending learning. After rekindling the passion I've studied Python, Java, JavaScript, PHP, HTML and CSS. Currently I'm learning React and Bootstrap. I started studies with programming as a major in 2020.<br><br>
-                    
-                    <b>My strengths</b>, I think, are self-learning, finding information, learning fast, applying learnt things in creative ways and always aiming for understanding rather than remembering. Most of my journey as a programmer has been self-learning or remote learning, so I feel pretty comfortable charging the unknown. I also have a strong background in mathematic which helps in certain tasks.<br><br>
-
-                    <b>Things I want to improve upon</b> are being more organized in my programming projects and working as a team.<br><br>
-                    
-                    <b>My future is open</b> and I still don't know what I exactly want from my career as a programmer. I'm looking forward to continuing to grow as coder and develope a more coherent view of the sub-categories in the field." />
-                </div>
-            )
-        }
+        
     }
 
     return (
-        <div className="row text-muted">
-            <div className="container-fluid m-0 p-0">
-            <div className="row justify-content-center">
-                <div className="col-sm-12 order-md-2 col-md-6 col-lg-5 my-2">
-                    <div className="col-12">
-                    <Card className="bg-light" key ="1" >
-                        <Card.Body >
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-5 bg-secondary">
-                                <Image src={require(`./assets/images/${a.image}`)} alt="" fluid />
-                            </div>
-                            <div className="col-7 bg-light">
-                                <div>{name + a.name}</div>
-                                <div>{age + countAge()}</div>
-                                <div>{city + a.home}</div>
-                                <div>{country + a.country}</div>
+        <div className="row text-muted justify-content-center">
+            <div className="col-12">
+            <div className="container m-0 p-0">
+                <div className="row justify-content-center">
+                    <div className="col-sm-12 order-md-2 col-md-6 col-lg-5 my-2 justify-content-right">
+                        
+                        <Card className="bg-light" key ="1" >
+                            <Card.Body >
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-5 bg-secondary">
+                                    <Image src={require(`./assets/images/${a.image}`)} alt="" fluid />
+                                </div>
+                                <div className="col-7 bg-light">
+                                    <div>{name + a.name}</div>
+                                    <div>{age + countAge()}</div>
+                                    <div>{city + a.home}</div>
+                                    <div>{country + a.country}</div>
 
+                                </div>
+                            </div>
+                            <div className="row my-2 py-1">
+                                <div className="col-auto">
+                                {hobbies()}
+                                </div>
                             </div>
                         </div>
-                        <div className="row my-2 py-1">
-                            <div className="col-auto">
-                            {hobbies()}
+                        </Card.Body>
+                        </Card> 
+                        
+                    </div>
+                    <div className="blockquote  col-sm-12 order-md-1 col-md-6 col-lg-7 my-2" style={{display: "flex", alignItems:"center",}}>
+                        <div className="col-12 py-2" style={{background: "rgba(91, 192, 222,0.2"}}>
+                            <div style={{borderLeft: "1px solid rgb(200,200,200)"}}>
+                                <BeutifyAbout str="<div class='lead p-1'><b>My first touch with programming</b> was with CoolBasic as a kid, but had a long hiatus since. My return to the field was when I took programming studies while studying to be a classroom teacher at Rauma, Finland. That is when I found myself loving the problem solving, the never-ending learning. After rekindling the passion I've studied Python, Java, JavaScript, PHP, HTML and CSS. Currently I'm learning React and Bootstrap. I started studies with programming as a major in 2020.</div>" />
                             </div>
                         </div>
                     </div>
-                    </Card.Body>
-                    </Card> 
-                    </div>
                 </div>
-                <div className="blockquote col-sm-12 order-md-1 col-md-6 col-lg-7 my-2  ">
-                    <div className="col-12">
-                        {experience()}
+                <BeutifyAbout str="<div class='row lead p-0 m-0' style='background-color:rgba(247, 217, 126,1);' ><div class='col-12 col-md-6 col-lg-12'>
+                    <b>My strengths</b>, I think, are self-learning, finding information, learning fast, applying learnt things in creative ways and always aiming for understanding rather than remembering. Most of my journey as a programmer has been self-learning or remote learning, so I feel pretty comfortable charging the unknown. I also have a strong background in mathematic which helps in certain tasks.<br><br>
                     </div>
-                </div>
+                    <div class='col-12 col-md-6 col-lg-12'>
+                    <b>Things I want to improve upon</b> are being more organized in my programming projects and working as a team.<br><br>
+                    
+                    <b>My future is open</b> and I still don't know what I exactly want from my career as a programmer. I'm looking forward to continuing to grow as coder and develope a more coherent view of the sub-categories in the field.</div></div>"/>
             </div>
             </div>
         </div>

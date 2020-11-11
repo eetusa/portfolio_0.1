@@ -1,4 +1,7 @@
+import { IoIosColorFill } from "react-icons/io";
+
 const normalWidth = "500px";
+
 
 const styles = ({
     bodyWrapper: {
@@ -44,10 +47,26 @@ const styles = ({
         // borderRadius: "10px",
     },
     wholeNav: {
-        margin: "20px 10px 20px 10px",
+        margin: "20px 0px 20px 0px",
         display: "flex", 
+        padding:"0",
         justifyContent: "space-evenly", 
         width: normalWidth,
+        background:"white",
+         position:"initial",
+        // zIndex:"1000"
+    },
+    wholeNavFixed: {
+
+        paddingTop:"5px",
+        paddingBottom:"5px",
+        margin: "0 0px 0px 0px",
+        display: "flex", 
+        justifyContent: "space-evenly", 
+        width: "100vw",
+        background:"white",
+         position:"fixed",
+         zIndex:"1000"
     },
     firstNav: {
         padding: "0",

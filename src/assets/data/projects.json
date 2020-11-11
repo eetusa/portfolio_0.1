@@ -13,14 +13,14 @@
     {
         "titleEN": "Ray Casting Tests",
         "descriptionEN": "Ray casting tests made with JS. Applied to simulate shadows.",
-        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
+        "body": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
         "image": "raycast.png",
         "banner": "raycast_banner.png",
         "banner_100": "raycast_banner_100.png",
         "banner_150": "raycast_banner_150.png",
         "demo": "/assets/projects/raycast_1.1/index.html",
         "id": "1",
-        "body":"Ray casting tests that began as an interest to the technique and ended up as a nice looking visual experience. I have some plans to implement the technique and visual style to a simple game engine as an exercise, as I think the look could be pretty cool in an interactive world. The program was done with pure JavaScript drawing on a canvas. The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow. In the demo you can choose to view the rays that are being cast or ray-to-object collision points. You can also change the visual style and play around with the polygon generation or create your own polygons."
+        "bodyEN":"<b>Ray casting tests</b> that began with an interest to the technique and ended up as a nice looking visual experience. I have some plans to implement the technique and visual style to a simple game engine as an exercise, as I think the look could be pretty cool in an interactive world. The program was done with pure JavaScript drawing on a canvas. <br><br>The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow. In the demo you can choose to view the rays that are being cast or ray-to-object collision points. You can also change the visual style and play around with the polygon generation or create your own polygons."
     },
     {
         "titleEN": "Circle Collision Test",

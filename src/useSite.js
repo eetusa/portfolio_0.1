@@ -3,6 +3,9 @@ import {SiteContext} from './site-context'
 
 const useSite = () =>{
 
+
+    
+
     const[state, setState] = useContext(SiteContext);
 
     const setView = (e) => {
@@ -20,6 +23,7 @@ const useSite = () =>{
     const setProjectState = (e) => {
         setState({...state, projectState: e});
     }
+
 
     return {
         setProjectState,

@@ -22,6 +22,30 @@ body, html{
     margin: 0;
 }
 
+#controlPanel{
+   
+    width:100%;
+    background-color: rgb(72, 72, 72);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    position: relative;
+}
+
+#buttons{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#info{
+    height:"30px";
+    padding:0px 5px 2px 5px;
+    width: 100%;
+    color: white;
+    background-color: rgba(0,0,0,1);
+    margin: 0px
+}
+
 #displayWrap{
     display: none;
     height: 600px;
@@ -35,3 +59,4 @@ body, html{
     font-size: 10px;
     margin: 5px;
 }
+

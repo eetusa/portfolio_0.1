@@ -3,14 +3,27 @@ import data from "./assets/data/projects.json";
 import Card from "react-bootstrap/Card";
 import useSite from "./useSite";
 import { Link } from "react-router-dom";
+import useWindowDimensions from "./useWindowDimensions";
 
 const GridView = () => {
   const { projectState, setProjectState } = useSite();
-
+  const {width} = useWindowDimensions();
   useEffect(() => {
+
+    let temp = [...projectState];
+    let change=false;
+
     if(projectState[1]===true){
-      let temp = [...projectState];
       temp[1] = false;
+      change=true;
+    }
+
+    if(projectState[2]===true){
+      temp[2]=false;
+      change=true;
+    }
+
+    if(change){
       setProjectState(temp);
     }
   })
@@ -25,6 +38,7 @@ const GridView = () => {
     });
   } else {
   }
+
 
  
 
@@ -47,22 +61,25 @@ const GridView = () => {
   }
 
   return (
-    <div className="container" id="grid" style={{ position: "relative" }}>
+    
       <div className="row py-4 py-sm-0 justify-content-center">
         {data.map((data) => {
           const resource = resourceTitle(data.titleEN);
+    
           
           return (
             <Card
-              className="col-sm-6 col-md-4 col-lg-3 m-2 p-0"
+              className="col-12 col-sm-4 col-md-4 col-lg-3 m-sm-2 p-0"
               style={{
-                boxShadow:
-                  "0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12)",
-                }}
+                boxShadow: width > 576 ?  "0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12)" : "0",
+                borderBottom: width > 576 ? "0" : "1px solid rgb(200,200,200)",
+                borderRadius: width > 576 ? "4px" : "0px",
+            }}
               key={data.id}
             >
               <img
                 className="card-img-top"
+                style={{borderRadius: width > 576 ? "4px" : "0px",}}
                 src={require(`./assets/images/${data.image}`)}
                 alt=""
               ></img>
@@ -74,9 +91,14 @@ const GridView = () => {
                     padding: "5px",
                   }}
                   onClick={() => {
-                    //setProjectStyle(true);
-                    //setProjectView(index);
-                    setProjectState([resource, true])
+                    let temp = [...projectState];
+                    
+                    temp[0] = resource;
+                    temp[1] = true;
+                    temp[2] = true;
+                    temp[3] = 0;
+                    setProjectState(temp)
+                    window.scrollTo(0,0);
                   }}
                 >
                   <Link to={`/projects/${resource}`}>{data.title}</Link>
@@ -89,7 +111,7 @@ const GridView = () => {
         })}
       </div>
       
-    </div>
+    
   );
 };
 

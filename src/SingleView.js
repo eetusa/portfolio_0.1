@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import data from './assets/data/projects.json';
 import useWindowDimensions from './useWindowDimensions';
-import Image from 'react-bootstrap/Image'
 import { useLocation } from "react-router-dom";
 import useSite from './useSite';
 import { Tab, Tabs } from 'react-bootstrap';
@@ -9,6 +8,7 @@ import ProjectDescription from './ProjectDescription';
 import ProjectScreenshots from './ProjectScreenshots';
 import ProjectDemo from './ProjectDemo';
 import ProjectVideo from './ProjectVideo';
+import { Link as L } from "react-router-dom";
 
 
 
@@ -29,12 +29,22 @@ const SingleView = () => {
     } else {
 
     }
-
+   
+    
     useEffect(() => {
+        let temp = [...projectState];
+        let change=false;
+
         if(projectState[1]===false){
-          let temp = [...projectState];
-          temp[1] = true;
-          setProjectState(temp);
+            temp[1] = true;
+            change=true;
+        }
+        if (projectState[2]===false){
+            temp[2] = true;
+            change=true;
+        }
+        if (change){
+            setProjectState(temp);
         }
     })
 
@@ -72,60 +82,70 @@ const SingleView = () => {
         
         <div>
         {pr && (
-            <div className="container py-0 px-0">
+            <div className="container">
                 <div className="row">
-                    <div className="col-12 m-0 p-0" style={{position:"relative", overflow:"hidden"}}>
-                            <Image style={{width:"100%"}} 
-                            src=
-                                {
-                                    width>=576 ? ( width>=768 ? ( width>=1200 ? require(`./assets/images/${pr.banner_100}`) 
-                                        : require(`./assets/images/${pr.banner_150}`)) 
-                                            : require(`./assets/images/${pr.banner}`)) 
-                                                : require(`./assets/images/${pr.image}`)  
-                                } 
-                            alt=""></Image>
-                            <div className="col-12"
-                                style={{
-                                    width:"100%",
-                                    padding: "5px",
-                                    
-                                    position: "absolute", 
-                                    bottom:"0",
-                                    background: "rgba(0,0,0,0.7)",
-                                    color:"white"
-                            }}> 
-                                {pr.title}
+                    <div className="col-12 col-md-8 px-0 mx-0">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12 py-4 py-md-0">
+                                    <Tabs style={{display:"flex"}} defaultActiveKey="0" id="tabSreenshotDemo" transition={false} onSelect={(key) => {
+                                            setTab(key);
+                                        }
+                                    }>
+                                        <Tab eventKey="0" title="Description">
+                                            
+                                        </Tab>
+                                        <Tab eventKey="1" title="Screenshots" disabled={pr.images ? false : true}>
+                                                
+                                        </Tab>
+                                        {!pr.demo && 
+                                            <Tab eventKey="2" title="Video" disabled={pr.video ? false : true}>
+                                                
+                                            </Tab>
+                                        }
+                                        {!pr.video && 
+                                            <Tab eventKey="3" title="Demo" disabled={pr.demo ? false : true}>
+                                                    
+                                            </Tab>
+                                        }
+                                    </Tabs>
+                                </div>
+                                
+
                             </div>
                             
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="row" style={width >= 576 ? ( width >= 768 ? ( width >= 1200 ? {height:"600px"} : {height:"550px"}) : {height:"500px"} ) : {height:"400px"}}>
+                                    {tab === "0" && <ProjectDescription data={pr}/>}
+                                    {tab === "1" && <ProjectScreenshots data={pr}/>}
+                                    {tab === "2" && <ProjectVideo data={pr}/>}
+                                    {tab === "3" && ( pr.demo && <ProjectDemo data={pr}/> )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    {width > 768 && 
+                        <div className="col-4" style={{marginTop: "41px"}}>
+                            <ul >
+                                {data.map( (item, index) => {
+                                    const resource = resourceTitle(item.titleEN);
+                                    return(
+                                        <li key={index+Math.random()} className="list-group-item py-1" style={{
+                                            borderLeft:0, 
+                                            borderRight:0, 
+                                            borderTop: "0",
+                                            borderStyle: "solid",
+                                            borderImage: pr!==item ? "black" : 'linear-gradient(to right, rgba(255,0,0,0.5) 0%, rgba(0,131,197,0) 80%)',
+                                            borderImageSlice: 1
+                                        }}> <L className="singleViewListItem" to={`/projects/${resource}`}>{item.title}</L> </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    }
                     
-                </div>
-                <div className="row">
-                    <Tabs className="col-12" defaultActiveKey="0" id="tabSreenshotDemo" transition={false} onSelect={(key) => {
-                            setTab(key);
-                        }
-                    }>
-                        <Tab eventKey="0" title="Description">
-                            
-                        </Tab>
-                        <Tab eventKey="1" title="Screenshots" disabled={pr.images ? false : true}>
-                                
-                        </Tab>
-                        <Tab eventKey="2" title="Video" disabled={pr.video ? false : true}>
-                                
-                                </Tab>
-                        <Tab eventKey="3" title="Demo (experimental)" disabled={pr.demo ? false : true}>
-                                
-                        </Tab>
-                    </Tabs>
-                    
-
-                </div>
-                <div className="row justify-content-center" style={width >= 576 ? ( width >= 768 ? ( width >= 1200 ? {height:"600px"} : {height:"550px"}) : {height:"500px"} ) : {height:"400px"}}>
-                    {tab === "0" && <ProjectDescription data={pr}/>}
-                    {tab === "1" && <ProjectScreenshots data={pr}/>}
-                    {tab === "2" && <ProjectVideo data={pr}/>}
-                    {tab === "3" && ( pr.demo && <ProjectDemo data={pr}/> )}
                 </div>
             </div>
         )}

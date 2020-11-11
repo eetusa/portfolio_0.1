@@ -9,16 +9,20 @@ canvas.style.cursor = "none";
 
 canvas.width = canvas.offsetWidth;
 canvas.height= canvas.offsetHeight;
-const width = canvas.width;
-const height = canvas.height;
-
 canvas.width = innerWidth;
 canvas.height= innerHeight;
+const width = canvas.width;
+const height = canvas.height;
+canvas.style.width="100%;"
+canvas.style.height="100%;"
 
-addEventListener("mousemove", function(event){
-    mouse.x = event.clientX;
-    mouse.y = event.clientY;
-});
+
+
+// addEventListener("mousemove", function(event){
+//     mouse.x = event.clientX;
+//     mouse.y = event.clientY;
+//     console.log(mouse.x,mouse.y)
+// });
 
 
 
@@ -46,8 +50,7 @@ const colors2 = [
     "orange"
 ]
 
-// Eventlisteners
-canvas.addEventListener("mousemove", function(event){
+addEventListener("mousemove", function(event){
     mouse.x = event.clientX - (canvas.offsetLeft - window.pageXOffset);
     mouse.y = event.clientY- (canvas.offsetTop - window.pageYOffset);
 });
@@ -329,7 +332,7 @@ let intersections = [];
     
     // polygons.push( new Polygon([{x: 200, y: 100},{x:300,y:100}, {x: 350, y:250}, {x: 150, y: 300}, {x: 150, y: 200}]));
     // polygons.push( new Polygon([{x: 000, y: 500},{x:500,y:100}, {x: 550, y:250}]));
-   polygons.addRandomPolygons2(20);
+//    polygons.addRandomPolygons2(20);
     
     walls.push(new Boundary(0,0,width,0));
     walls.push(new Boundary(0,0,0,height));
@@ -362,7 +365,7 @@ function animate(){
     const visibleArea = source.look(raychecks, 0);
     drawInvertPolygon(visibleArea[0].vertices, 0.8);    
      
-    source.drawMasks();
+    // source.drawMasks();
     c.globalCompositeOperation="source-over";
 
     drawTempPoly(tempPoints);

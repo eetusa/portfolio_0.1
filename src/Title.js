@@ -23,12 +23,17 @@ const Title = () => {
 
 
     return (
-        <div style={{borderBottom: "1px solid rgb(230,230,230)"}}>
-            <Link style={{textDecoration: 'none', color:"black"}} to="/home">
-                <h1 style={style.title}>P o r t f o l i o</h1>
-            </Link>
-            <SubTitle/>
+        <Link style={{textDecoration: 'none', color:"black"}} to="/home">
+        <div style={{display:"flex", height:"80px"}}>
+            <img height="100%" style={{marginRight: "5px"}} src={require(`./assets/images/testlogo.png`)} alt="logo" />
+            <div style={{borderBottom: "1px solid rgb(230,230,230)"}}>
+                
+                    <h1 style={style.title}>P o r t f o l i o</h1>
+                
+                <SubTitle/>
+            </div>
         </div>
+        </Link>
     );
 }
 

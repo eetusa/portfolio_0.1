@@ -175,3 +175,95 @@ label {
   .app-checkboxes li {
     display: block;
   }
+
+  .nav-link {
+    background-color: "black";
+  }
+  .navbar-nav .dropdown-menu{
+    -webkit-transition: all 1s ease-in-out !important;
+    -moz-transition: all 1s ease-in-out !important;
+    -o-transition: all 1s ease-in-out !important;
+    transition: all 1s ease-in-out !important;
+  }
+
+  .navbar-nav .dropdown-menu.show{
+    display: flex !important;
+    padding: 0 !important;
+    margin: 0px !important;
+    justify-content: left !important;
+    border-radius: 0 !important; 
+    border: 0 !important;
+    background:rgba(0,0,0,0) !important;
+    -webkit-transition: all 1s ease-in-out !important;
+    -moz-transition: all 1s ease-in-out !important;
+    -o-transition: all 1s ease-in-out !important;
+    transition: all 1s ease-in-out !important;
+  }
+
+  .navbar-light .navbar-nav .nav-link  {
+    color: black !important;
+    background:rgba(0,0,0,0) !important;
+  }
+  
+  #collasible-nav-dropdown{
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+  }
+
+  #brandLink {
+    color:black !important;
+  }
+
+
+
+  #brandLink:hover {
+    text-decoration: none !important;
+  }
+
+  .singleViewListItem{
+    color:black;
+}
+
+.singleViewListItem:hover{
+    color:black;
+}
+
+.mainNavItem {
+  color: rgb(100,100,100);
+  width:100px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.mainNavItem:hover{
+  color:rgb(0,0,0);
+  text-decoration: none;
+}
+
+.mainNavItemActive{
+  color: black;
+  border-left:0;
+  border-right:0; 
+  border-top: 0;
+  border-bottom: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgba(255,0,0,0) 0%, rgba(255,0,0,0.5) 50%, rgba(255,0,0,0) 100%);
+  border-image-slice: 1;
+}
+
+.quote{
+  opacity: 1;
+  transition: all 3s ease-in-out;
+}
+.quotehidden{
+  opacity: 0;
+  transition: all 3s ease-in-out;
+}
+
+.quotesuperhidden{
+  opacity: 0;
+  transition: all 0s;
+}
