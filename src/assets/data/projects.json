@@ -1,42 +1,58 @@
 [
     {
-        "titleEN": "Calculator",
-        "descriptionEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "calc.png",
-        "banner": "calc_banner.png",
-        "banner_100": "calc_banner_100.png",
-        "banner_150": "calc_banner_150.png",
-        "demo": "/assets/projects/calculator0.9/index.html",
-        "id": "0"
+        "titleEN": "Ray Casting Tests",
+        "descriptionEN": "Ray casting tests applied to simulate shadows.",
+        "image": "raycast/raycast.png",
+        "demo": "/assets/projects/raycast_1.1/index.html",
+        "tags": "javascript, canvas",
+        "id": "0",
+        "bodyEN":"<h5>A test applying ray casting to achieve varying results</h5><p>The project began with an interest to the technique and ended up more as a visual effect. To me, ray casting combined learning JS, learning a new skill and math. What's there not to love?<br><br>In ray casting 'rays' are sent outwards from a common point while detecting if a ray collides with anything. These collision points is the information that motivates the whole procedure. <br><br>The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow.</p>",
+        "date": "2020/09/30"
     },
     {
-        "titleEN": "Ray Casting Tests",
-        "descriptionEN": "Ray casting tests made with JS. Applied to simulate shadows.",
-        "body": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "raycast.png",
-        "banner": "raycast_banner.png",
-        "banner_100": "raycast_banner_100.png",
-        "banner_150": "raycast_banner_150.png",
-        "demo": "/assets/projects/raycast_1.1/index.html",
+        "titleEN": "Calculator",
+        "descriptionEN": "A calculator, evaluating the calculation with algorithms using recursion.",
+        "bodyEN": "<h5>A calculator done as exercise to learn JavaScript</h5> <p>I decided to build a calculator as an excerise to learn <span class='text-info'>JavaScript</span>. It combined CSS, DOM-manipulation via Javascript and just fun algorithm tinkering. <br><br> The application runs a recursive algorithm on the given calculation, solving from the 'deepest sub-calculation' to the 'surface'. <br><br> Basically, if the calculation is the following: <code><b>5+(4/2)</b></code>, the algorithm solves it in the following steps:</p><ol><li><code>5+<b>(4/2)</b></code></li><li><code><b>(</b>4/2<b>)</b></code></li><li><code><b>4/2</b></code></li><li><code><b>2</b></code></li><li><code><b>5+2</b></code></li><li><code><b>7</b></code></li></ol> <p>The app isn't perfect as it has at least one know bug (try entering '+(-)' -- it shouldn't let you enter incorrect inputs) and the ANS feature was added as an afterthought and works like one. Otherwise I'm pretty happy with it, considering the context.</p>",
+        "image": "calc/calc.png",
+        "demo": "/assets/projects/calculator0.9/index.html",
+        "demotext": "If you look at the developer console, you can see the (a bit incoherent) stages of the algorithm.",
+        "tags": "javascript, css, html",
         "id": "1",
-        "bodyEN":"<b>Ray casting tests</b> that began with an interest to the technique and ended up as a nice looking visual experience. I have some plans to implement the technique and visual style to a simple game engine as an exercise, as I think the look could be pretty cool in an interactive world. The program was done with pure JavaScript drawing on a canvas. <br><br>The math heavy parts were inspired from different sources, such as http://geomalgorithms.com/ and Stack OverFlow. In the demo you can choose to view the rays that are being cast or ray-to-object collision points. You can also change the visual style and play around with the polygon generation or create your own polygons."
+        "date": "2020/08/10"
+    },
+    {
+        "titleEN": "Slide Browser",
+        "descriptionEN": "A tool for browsing PowerPoint and PDF-files with the feature to filter pages by text content.",
+        "bodyEN": "<h5>A tool to find information from PDF and PowerPoint-files</h5><p> I wanted to find information more effeciently from pdf & ppt files. I decided to make an app for it, as I envisioned it being a good learning experience in creating a standalone desktop app. <br><br> The program was created with <span class='text-info'>React</span> and <span class='text-info'>Electron</span> with some <span class='text-danger'>Java</span> on the side. A java program pulls the text data from pdf & ppt files in a specified folder and creates a json from the data. The same program also splits said files to singular pages and creates images from them. The Electron app calls this java program to target user defined folders, and then matches up the split pages and text data from the json. This allows the program to filter pages by text content. <br><br>Not going to lie, I think it's pretty cool creating a standalone desktop app with basically web technologies.</p>",
+        "images": [
+            {
+                "img": "slidebrowser/slidebrowser.png"
+            },
+            {
+                "img": "slidebrowser/slidebrowser2.png"
+            }
+        ],
+        "image": "slidebrowser/slidebrowser.png",
+        "id": "7",
+        "video": "slidebrowserNew.webm",
+        "tags": "javascript, react, electron, java",
+        "date":"2020/11/10"
     },
     {
         "titleEN": "Circle Collision Test",
-        "descriptionEN": "A circle collision simulation test made with JS, motor built after https://www.vobarian.com/collisions/2dcollisions2.pdf ...",
-        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "balls.png",
-        "banner": "balls_banner.png",
-        "banner_100": "balls_banner_100.png",
-        "banner_150": "balls_banner_150.png",
+        "descriptionEN": "A circle collision simulation made for learning purposes.",
+        "bodyEN": "<h5>A circle collision simulation made with pure JavaScript</h5><p> I came up with this challenge for myself to practice <span class='text-info'>JavaScript</span>. As with my <a target='_blank' href='/projects/calculator'>calculator</a>, I had just began learning JS and wanted to try out different stuff. The math was inspired by <a target='_blank' href='https://www.vobarian.com/collisions/2dcollisions2.pdf'>Chad Berchek's paper</a>.<br><br>The project was definitely a challenge, as accurate collisions weren't achieved straight out of the gate with Berchek's paper. After trial and error I got the collisions working very nicely. The balls are still a bit restless. <br><br>The application isn't still optimized properly - the collision check is too broad and as such too expensive. The 'physiscs' also aren't time dependent but <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame'>requestAnimationFrame()</a> dependent, so 'gravity' may vary, so to speak. I'll get to fixing it someday!</p>",
+        "image": "balls/balls.png",
         "demo":"/assets/projects/balls/index.html",
-        "id": "2"
+        "demotext":"Press E to spawn a ball at mouse position. Press space to pause physics. Click & drag & throw balls. No mobile support at the moment!",
+        "tags": "javascript, canvas",
+        "id": "2",
+        "date": "2020/08/20"
     },
     {
         "titleEN": "Peek 0.9",
-        "descriptionEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
-        "bodyEN": "A minecraft plugin made with Java, aiming to give restricted spectator mode to server users.",
+        "descriptionEN": "A Minecraft plugin that gives a toggleable spectator mode with restrictions.",
+        "bodyEN": "<h5>A Minecraft plugin for restricted spectator mode</h5> <p>The plugin was built upon the idea of giving a bit more freedom to building without being as game breaking as specator mode in survival. <br><br>The mod provides a toggleable mode that lets the user fly as in the spectator mode, but with two major restrictions:</p> <ol><li>There's a maximium range on the fly distance.</li><li>When toggled off, the player is returned to their original position.</li></ol><p>These restrictions enable the player to get a wider view of their build or smaller details inside compact builds while not making building or playing easier - in a way.</p>",
         "image": "mine/mine.png",
         "images": [
                     {
@@ -47,41 +63,27 @@
                     }
                 ],
         "video": "minevideo.webm",
-        "banner": "mine_banner.png",
-        "banner_100": "mine_banner_100.png",
-        "banner_150": "mine_banner_150.png",
-        "id": "3"
-    },
-    {
-        "titleEN": "Portfolio",
-        "descriptionEN": "A website created with React and Bootstrap as a learning experience and a way to showcase skills.",
-        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "site.png",
-        "banner": "site_banner.png", 
-        "banner_100": "mine_banner_100.png",
-        "banner_150": "mine_banner_150.png",
-        
-        "id": "4"
+        "tags": "java",
+        "id": "3",
+        "date": "2020/01/04"
     },
     {
         "titleEN": "ASCII Chess",
-        "descriptionEN": "A locally played chess game made with Java.",
-        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "chess.png",
-        "banner": "chess_banner.png",
-        "banner_100": "chess_banner_100.png",
-        "banner_150": "chess_banner_150.png",
-        "id": "5"
+        "descriptionEN": "A locally played chess game.",
+        "bodyEN": "<h5>Java based chess game with ASCII graphics</h5><p>The program was a mandatory exercise for a course that focused on <a target='_blank' href='https://en.wikipedia.org/wiki/Object-oriented_programming'>OOP</a>. The game's logic blocks illegal moves, but doesn't recognize checkmate. Implementing checkmate wouldn't demand a great effort, but it wasn't required in the initial exercise description. The program has the features of saving and loading game states.</p>",
+        "image": "chess/chess.png",
+        "tags": "java",
+        "id": "5",
+        "date":"2019/02/28"
     },
     {
         "titleEN": "Webshop API",
         "descriptionEN": "A REST API done with PHP and communicated with via JS.",
-        "bodyEN": "A calculator made with JS, evaluating the calculation with algorithims of my own design using recursion.",
-        "image": "rajapinta.png",
-        "banner": "rajapinta_banner.png", 
-        "banner_100": "rajapinta_banner_100.png",
-        "banner_150": "rajapinta_banner_150.png",
-        "id": "6"
+        "bodyEN": "<h5>REST API that handles several simultaneous parameters</h5> <p>The API> receives GET requests and returns JSON. The HTML layout's design wasn't, well, designed, hence the rough look. A small piece of JavaScript creates the elements for the items returned by the API.</p>",
+        "image": "rajapinta/rajapinta.png",
+        "tags": "javascript, php",
+        "id": "4",
+        "date": "2020/10/30"
     }
 ]
 
