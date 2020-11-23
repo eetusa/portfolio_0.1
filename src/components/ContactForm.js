@@ -23,7 +23,6 @@ const ContactForm = () => {
             body: encode({ "form-name": "contact", ...all })
           })
             .then(() => {
-                    console.log(all)
                     setSuccessfulSubmit("success")
                 })
             .catch(error => alert(error));
@@ -80,7 +79,7 @@ const ContactForm = () => {
                 <div>
                     Phone number (opt)
                 </div>
-                <input name="number" style={{width:"100%"}} value={number} onChange={(e) => setNumber(e.target.value)} type="number"></input>
+                <input name="number" style={{width:"100%"}} value={number} onChange={(e) => setNumber(e.target.value)} type="text"></input>
             </div>
         </div>
         <div className="row">

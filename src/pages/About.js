@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import ReactTooltip from 'react-tooltip';
 
 
 
@@ -98,6 +98,8 @@ const About = () => {
     //         )
     // }
 
+    const [readMoreExpanded, setReadMoreExpanded] = useState(false);
+
     return (
         
         <>
@@ -135,7 +137,8 @@ const About = () => {
                                  maxWidth:"100%"
                                   
                             }}  
-                        src={require(`../assets/images/siteimages/minakuva2.png`)} 
+                        // src={require(`../assets/images/siteimages/minakuva2.png`)} 
+                        src={require(`../assets/images/siteimages/placeholder.png`)} 
                         alt="Me" 
                     />
                 </div>       
@@ -150,8 +153,37 @@ const About = () => {
                     <b>My name is Eetu Salli.   </b></p>
                 </div>
             </div>
+            <div className="row px-0 mx-0 py-4">
+                <div 
+                    className={readMoreExpanded ? 
+                        "col-12 read-more-content-wrapper read-more-show" 
+                        : "col-12 read-more-content-wrapper read-more-hide"}
+                >
+                    <p>I'm..
+                        <ul>
+                            <li>29 years old</li>
+                            <li>interested in music (I play guitar), movies, <span data-for="games" data-type="error" className="text-danger" data-tip="">games</span>, tv series, family & friends</li>
+                            <li>a happy owner of a Portuguese Water Dog, <span data-for='kelmi' className="text-info" data-tip='Kelmi'>Kelmi</span></li>
+                        </ul>
+                    </p>
+                    <p>Outside of the field among other things I have experience as..
+                    <ul>
+                        <li><span className="highlight-word">A process operator</span> in a chemical plant <i>Sachtleben Pigments</i></li>
+                        <li><span className="highlight-word">A group leader</span> in special cleaning and contamination management in Olkiluoto Nuclear Power Plant <i>RTK-Palvelut Oy</i></li>
+                        <li><span className="highlight-word">A technician</span> and <span className="highlight-word">a group leader</span> in maintaining ice condensers in Loviisa Nuclear Power Plant <i>RTK-Palvelut Oy</i></li>
+                        <li><span className="highlight-word">A longshoreman</span> in Port of Rauma <i>Valdoring Oy</i></li>
+                        <li><span className="highlight-word">A warehouse worker</span> in Rauma shipyard <i>Transval Oy</i></li>
+                    </ul>
+                    </p>
+                </div>
+                <div className="col-12 text-center">
+                           <button onClick={() => setReadMoreExpanded(!readMoreExpanded)} className="read-more-button">{readMoreExpanded && "That's enough"} {!readMoreExpanded && "Read more"} </button> 
+                </div>
+            </div>
            
-
+            <ReactTooltip id="games" className="tooltip-text" effect="solid">I'm a pretty good shot in CS:GO and quite alright in Dota 2!</ReactTooltip>
+            <ReactTooltip  className="tooltip-kelmi" place="right"  effect="solid"  id='kelmi'><img style={{position:"absolute",maxHeight:"100%", top:"0",left:"0"}} src={require(`../assets/images/siteimages/kelmi.png`)}/></ReactTooltip>
+            
             
         </>
     );

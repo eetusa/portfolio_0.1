@@ -1,10 +1,14 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
 #root {
   display:flex;
   justify-content: center;
+}
+
+p{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 label {
@@ -221,6 +225,7 @@ label {
 
   .navbar-small {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
   }
   
   #collasible-nav-dropdown{
@@ -581,7 +586,7 @@ title {
 }
 
 .tab-title{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
   font-family: 'Roboto', sans-serif;
   position: absolute;
   right: 7px;
@@ -589,10 +594,12 @@ title {
   font-size: 1.5em;
   color: #090000;
   margin-bottom:0;
+  font-weight: 300;
 }
 .project-title-small{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 code{
@@ -638,7 +645,7 @@ ol li::marker{
 }
 ol li{
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  margin-right: 25px;
+  
 }
 
 .project-description h5{
@@ -647,6 +654,16 @@ ol li{
   opacity: 0.9;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.project-description h6{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.1em;
+  opacity: 0.8;
+  
 }
 
 .project-description p{
@@ -730,6 +747,7 @@ ol li{
 
 .contact-form-wrapper {
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .contact-info-span {
@@ -789,4 +807,53 @@ ol li{
   opacity: 0;
   left:100vw;
   transition: opacity 0.2s, left 0s 0.2s;
+}
+
+.read-more-button{
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  font-weight: 300;
+  border: 1px solid rgb(252, 150, 55);
+  border-radius: 2px;
+}
+
+.read-more-button:hover{
+ 
+  
+  background-color: white;
+  text-decoration: underline;
+}
+
+.read-more-content-wrapper{
+  
+  overflow: hidden;
+  background-color: rgb(247, 247, 247);
+}
+.read-more-show{
+  transition: max-height 1s ease-in-out;
+  max-height:500px;
+}
+
+.read-more-hide{
+  max-height: 0px;
+  transition: max-height 1s ease-in-out;
+}
+
+.tooltip-kelmi{
+  max-height: 80vh;
+  min-height: 60vh;
+  background-color: rgba(0,0,0,0);
+  min-width: 45vh;
+  padding:0;
+  margin: 0;
+  
+}
+
+.tooltip-text{
+  max-width: 70vw;
+}
+
+.highlight-word {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 }
