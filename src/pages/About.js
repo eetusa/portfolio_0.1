@@ -137,8 +137,7 @@ const About = () => {
                                  maxWidth:"100%"
                                   
                             }}  
-                        // src={require(`../assets/images/siteimages/minakuva2.png`)} 
-                        src={require(`../assets/images/siteimages/placeholder.png`)} 
+                        src={require(`../assets/images/siteimages/minakuva2.png`)} 
                         alt="Me" 
                     />
                 </div>       
