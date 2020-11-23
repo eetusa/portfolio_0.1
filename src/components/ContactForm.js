@@ -80,7 +80,7 @@ const ContactForm = () => {
                 <div>
                     Phone number (opt)
                 </div>
-                <input name="number" style={{width:"100%"}} value={number} onChange={(e) => setNumber(e.target.value)} type="text"></input>
+                <input name="number" style={{width:"100%"}} value={number} onChange={(e) => setNumber(e.target.value)} type="number"></input>
             </div>
         </div>
         <div className="row">
