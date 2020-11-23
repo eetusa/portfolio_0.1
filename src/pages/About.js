@@ -1,102 +1,102 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
 
 const About = () => {
 
-    const shuffle = (a) => {
-        let j, x, i;
-        for (i = a.length - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            x = a[i];
-            a[i] = a[j];
-            a[j] = x;
-        }
-        return a;
-    }
-    const generateAttributesList = (array) => {
-        let temp = [];
-        for (let i = 0 ; i < array.length ; i++){
-            let subtemp = [];
-            subtemp.push(Math.random()*45); // left
-            subtemp.push(5+ Math.random()*45); // right
-            subtemp.push(2+10*Math.random()); // duration
-            subtemp.push(3+4*Math.random()); // delay
-            temp.push(subtemp);
+    // const shuffle = (a) => {
+    //     let j, x, i;
+    //     for (i = a.length - 1; i > 0; i--) {
+    //         j = Math.floor(Math.random() * (i + 1));
+    //         x = a[i];
+    //         a[i] = a[j];
+    //         a[j] = x;
+    //     }
+    //     return a;
+    // }
+    // const generateAttributesList = (array) => {
+    //     let temp = [];
+    //     for (let i = 0 ; i < array.length ; i++){
+    //         let subtemp = [];
+    //         subtemp.push(Math.random()*45); // left
+    //         subtemp.push(5+ Math.random()*45); // right
+    //         subtemp.push(2+10*Math.random()); // duration
+    //         subtemp.push(3+4*Math.random()); // delay
+    //         temp.push(subtemp);
 
-        }
+    //     }
         
-        return temp;
-    }
+    //     return temp;
+    // }
 
-    const interestsList = ["guitar", "music", "horror movies", "movies", "tv series", "piano", "games", "PC", "animals", "dogs", "mathemathics", "algorithms", 
-    "Dota 2", "CS:GO", "The Witcher 3", "tattoos", "code", "technology", "rain", "sea", "summer", "books", "audio books", "fantasy",
-    "scifi", "esports", "family", "friends", "anime", "learning", "studying", "teaching", "helping", "physics", "beer", "wine", "sauna",
-     "sundays", "hifi", "Pori","Rauma","Tampere","Kuopio", "JS", "Java", "Full stack"];
-    const [interests] = useState(shuffle(shuffle(interestsList)))
-    const [interestAttributes] = useState(generateAttributesList(interestsList))
+    // const interestsList = ["guitar", "music", "horror movies", "movies", "tv series", "piano", "games", "PC", "animals", "dogs", "mathemathics", "algorithms", 
+    // "Dota 2", "CS:GO", "The Witcher 3", "tattoos", "code", "technology", "rain", "sea", "summer", "books", "audio books", "fantasy",
+    // "scifi", "esports", "family", "friends", "anime", "learning", "studying", "teaching", "helping", "physics", "beer", "wine", "sauna",
+    //  "sundays", "hifi", "Pori","Rauma","Tampere","Kuopio", "JS", "Java", "Full stack"];
+    // const [interests] = useState(shuffle(shuffle(interestsList)))
+    // const [interestAttributes] = useState(generateAttributesList(interestsList))
 
-    const RandomInterests = () => {
-        return (
-                    <div 
-                    className="text-muted"
-                        style=
-                        {{
-                            fontSize:"10px",
-                            position:"relative",
-                            whiteSpace:"nowrap",
-                            height: "100px"
-                        }}
-                    >
-                        {interests.map ( (word, index) => {
-                            const positionXFirst = interestAttributes[index][0];
-                            const positionXSecond = interestAttributes[index][1];
-                            const randomDuration=interestAttributes[index][2];
-                            const randomDelay=interestAttributes[index][3];
-                            return(
-                                <React.Fragment key = {`${index}+${word}`}>
+    // const RandomInterests = () => {
+    //     return (
+    //                 <div 
+    //                 className="text-muted"
+    //                     style=
+    //                     {{
+    //                         fontSize:"10px",
+    //                         position:"relative",
+    //                         whiteSpace:"nowrap",
+    //                         height: "100px"
+    //                     }}
+    //                 >
+    //                     {interests.map ( (word, index) => {
+    //                         const positionXFirst = interestAttributes[index][0];
+    //                         const positionXSecond = interestAttributes[index][1];
+    //                         const randomDuration=interestAttributes[index][2];
+    //                         const randomDelay=interestAttributes[index][3];
+    //                         return(
+    //                             <React.Fragment key = {`${index}+${word}`}>
                                       
-                                                <span
-                                                className="fade-in"
-                                                    style={ 
-                                                        index%2===0 ? 
-                                                            {   
-                                                                animationDelay: `${randomDelay}s`,
-                                                                MozAnimationDelay: `${randomDelay}s`,
-                                                                WebkitAnimationDelay: `${randomDelay}s`,
-                                                                OAnimationDelay: `${randomDelay}s`,
-                                                                animation: `fadeIn ease ${randomDuration}s`,
-                                                                WebkitAnimation: `fadeIn ease ${randomDuration}s`,
-                                                                MozAnimation: `fadeIn ease ${randomDuration}s`,
-                                                                OAnimation: `fadeIn ease ${randomDuration}s`,
-                                                                left: `${positionXFirst}%`,
-                                                                color: Math.random() > 0.9 ? "#e66465" : "black",
-                                                            }  
-                                                                :
-                                                            {
-                                                                animationDelay: `${randomDelay}s`,
-                                                                MozAnimationDelay: `${randomDelay}s`,
-                                                                WebkitAnimationDelay: `${randomDelay}s`,
-                                                                OAnimationDelay: `${randomDelay}s`,
-                                                                animation: `fadeIn ease ${randomDuration}s`,
-                                                                WebkitAnimation: `fadeIn ease ${randomDuration}s`,
-                                                                MozAnimation: `fadeIn ease ${randomDuration}s`,
-                                                                OAnimation: `fadeIn ease ${randomDuration}s`,
-                                                                right: `${positionXSecond}%`,
-                                                                color: Math.random() > 0.9 ? "#e66465" : "black",
-                                                            } 
-                                                        }
-                                                >
-                                                    {word}
-                                                </span>
-                                              { index%2!==0 && <br></br>}
-                                </React.Fragment>
-                                )
-                        })}
-                    </div>
-            )
-    }
+    //                                             <span
+    //                                             className="fade-in"
+    //                                                 style={ 
+    //                                                     index%2===0 ? 
+    //                                                         {   
+    //                                                             animationDelay: `${randomDelay}s`,
+    //                                                             MozAnimationDelay: `${randomDelay}s`,
+    //                                                             WebkitAnimationDelay: `${randomDelay}s`,
+    //                                                             OAnimationDelay: `${randomDelay}s`,
+    //                                                             animation: `fadeIn ease ${randomDuration}s`,
+    //                                                             WebkitAnimation: `fadeIn ease ${randomDuration}s`,
+    //                                                             MozAnimation: `fadeIn ease ${randomDuration}s`,
+    //                                                             OAnimation: `fadeIn ease ${randomDuration}s`,
+    //                                                             left: `${positionXFirst}%`,
+    //                                                             color: Math.random() > 0.9 ? "#e66465" : "black",
+    //                                                         }  
+    //                                                             :
+    //                                                         {
+    //                                                             animationDelay: `${randomDelay}s`,
+    //                                                             MozAnimationDelay: `${randomDelay}s`,
+    //                                                             WebkitAnimationDelay: `${randomDelay}s`,
+    //                                                             OAnimationDelay: `${randomDelay}s`,
+    //                                                             animation: `fadeIn ease ${randomDuration}s`,
+    //                                                             WebkitAnimation: `fadeIn ease ${randomDuration}s`,
+    //                                                             MozAnimation: `fadeIn ease ${randomDuration}s`,
+    //                                                             OAnimation: `fadeIn ease ${randomDuration}s`,
+    //                                                             right: `${positionXSecond}%`,
+    //                                                             color: Math.random() > 0.9 ? "#e66465" : "black",
+    //                                                         } 
+    //                                                     }
+    //                                             >
+    //                                                 {word}
+    //                                             </span>
+    //                                           { index%2!==0 && <br></br>}
+    //                             </React.Fragment>
+    //                             )
+    //                     })}
+    //                 </div>
+    //         )
+    // }
 
     return (
         

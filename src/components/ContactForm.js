@@ -61,7 +61,8 @@ const ContactForm = () => {
     }
     return (
         
-    <form data-netlify="true" ref={formRef} action="" onSubmit={(e) => handleSubmitPress(e)} className="container-fluid contact-form-wrapper" name="contact" method="POST">
+    <form  ref={formRef} onSubmit={(e) => handleSubmitPress(e)} className="container-fluid contact-form-wrapper" name="contact">
+        <input type="hidden" name="form-name" value="contact" />
         <div className="row">
             <div className="col-12 col-lg-4 px-2">
                 <div>
