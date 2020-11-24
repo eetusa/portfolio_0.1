@@ -108,28 +108,19 @@ const GridView = () => {
                   margin: width > 576 ? "5px" : "0px",
                  
                }}
-              >
+              ><Link className="router-link" to={`/projects/${resource}`}>
                 <img
                   className="card-img-top"
                   style={{borderRadius: width > 576 ? "4px" : "0px",}}
                   src={require(`../assets/images/${data.image}`)}
                   alt=""
-                ></img>
+                ></img></Link>
                 <Card.Body style={{background:"rgb(250,250,250)"}}>
                   <Card.Title
                     style={{
                       borderTop: "",
                       borderBottom: "2px solid rgba(0,0,0,0.1)",
                       padding: "5px",
-                    }}
-                    onClick={() => {
-                      // let temp = [...projectState];
-                      // temp[0] = resource;
-                      // temp[1] = true;
-                      // temp[2] = true;
-                      // temp[3] = 0;
-                      // setProjectState(temp)
-                      // window.scrollTo(0,0);
                     }}
                   >
                     <Link className="router-link" to={`/projects/${resource}`}>{data.title} <span>{data.displaydate}</span></Link>
