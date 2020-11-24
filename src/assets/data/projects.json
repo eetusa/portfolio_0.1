@@ -44,7 +44,7 @@
         "bodyEN": "<h5>A circle collision simulation made with pure JavaScript</h5><p> I came up with this challenge for myself to practice <span class='text-info'>JavaScript</span>. As with my <a target='_blank' href='/projects/calculator'>calculator</a>, I had just began learning JS and wanted to try out different stuff. The math was inspired by <a target='_blank' href='https://www.vobarian.com/collisions/2dcollisions2.pdf'>Chad Berchek's paper</a>.<br><br>The project was definitely a challenge, as accurate collisions weren't achieved straight out of the gate with Berchek's paper. After trial and error I got the collisions working very nicely. The balls are still a bit restless. <br><br>The application isn't still optimized properly - the collision check is too broad and as such too expensive. The 'physics' aren't time dependent but <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame'>requestAnimationFrame()</a> dependent, so 'gravity' may vary, so to speak. I'll get to fixing it someday!</p>",
         "image": "balls/balls.png",
         "demo":"/assets/projects/balls/index.html",
-        "demotext":"Press E to spawn a ball at mouse position. Press space to pause physics. Click & drag & throw balls. No mobile support at the moment!",
+        "demotext":"Click to spawn a ball. Press space to pause physics. Click & drag & throw balls.",
         "tags": "javascript, canvas",
         "id": "2",
         "date": "2020/08/20"

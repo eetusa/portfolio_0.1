@@ -7,7 +7,7 @@ class Particle{
         this.darkmask = darkmask;   
         this.stct = stct;
         if (lightmask){
-            this.light = new LightMask(this.x, this.y, 30, 400, "rgba(255,255,255,0.9)");
+            this.light = new LightMask(this.x, this.y, 30, 600, "rgba(255,255,255,0.9)");
         }
         if (darkmask){
             this.dark = new LightMask(this.x,this.y, 30, 1000, "black",1);

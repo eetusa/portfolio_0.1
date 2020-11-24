@@ -165,7 +165,7 @@ const About = () => {
                             <li>a happy owner of a Portuguese Water Dog, <span data-for='kelmi' className="text-info" data-tip='Kelmi'>Kelmi</span></li>
                         </ul>
                     </p>
-                    <p>Outside of the field among other things I have experience as..
+                    <p>Outside of the field - among other things - I have experience as..
                     <ul>
                         <li><span className="highlight-word">A process operator</span> in a chemical plant <i>Sachtleben Pigments</i></li>
                         <li><span className="highlight-word">A group leader</span> in special cleaning and contamination management in Olkiluoto Nuclear Power Plant <i>RTK-Palvelut Oy</i></li>

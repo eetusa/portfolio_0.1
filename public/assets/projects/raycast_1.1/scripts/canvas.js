@@ -159,7 +159,7 @@ Array.prototype.addRandomPolygons2 = function(n){
 
     for (let u = 0; u < n; u++){
         let set=1;
-        const radius = randomIntFromRange(20,100);
+        const radius = randomIntFromRange(20,height/150);
         const vertices = randomIntFromRange(3,9);
         let angles = [];
         const cx = randomIntFromRange(radius+1,width-radius-1);
@@ -239,6 +239,7 @@ function drawPolygon(){
 
 }
 
+// 0 on mousedown, 1 mouseup
 function handleClick(e){
     if (e==0){
         
@@ -247,7 +248,6 @@ function handleClick(e){
             for (let obj of arr){
                 if (obj instanceof Polygon){
                     if (pointInPolygon(mouse, obj.vertices)){
-                        console.log("click");
                         obj.followMouse = 1;
                         inP = 1;
                         moving.push(obj);
@@ -256,23 +256,25 @@ function handleClick(e){
             }
         }
         if (!inP){
-            if (tempPoints.length==0){
-                tempPoints.push(new Point(mouse.x, mouse.y));
-            } else{
-                
-                if (pointInRadius(tempPoints[0], mouse, 10)){
-                    if (tempPoints.length < 3){
-                        tempPoints = [];
-                    } else{
-                        
-                        polygons.push(new Polygon(tempPoints));
-                        tempPoints = [];
-                        raychecks.pop();
-                        intersections = returnPolygonIntersect(polygons);
-                        raychecks.push(intersections);
-                    }
-                } else{
+            if (isDrawing){
+                if (tempPoints.length==0){
                     tempPoints.push(new Point(mouse.x, mouse.y));
+                } else{
+                    
+                    if (pointInRadius(tempPoints[0], mouse, 10)){
+                        if (tempPoints.length < 3){
+                            tempPoints = [];
+                        } else{
+                            
+                            polygons.push(new Polygon(tempPoints));
+                            tempPoints = [];
+                            raychecks.pop();
+                            intersections = returnPolygonIntersect(polygons);
+                            raychecks.push(intersections);
+                        }
+                    } else{
+                        tempPoints.push(new Point(mouse.x, mouse.y));
+                    }
                 }
             }
             
@@ -290,7 +292,19 @@ function handleClick(e){
     }
 }
 
-
+function clearCanvas() {
+    polygons = [];
+    raychecks = [];
+    movables = [];
+    moving = [];
+    tempPoints = [];
+    isDrawing=false;
+    intersections = [];
+    raychecks.push(walls);
+    raychecks.push(polygons);
+    raychecks.push(intersections);
+    movables.push(polygons);
+}
 // Implementation
 
 let walls = [];
@@ -300,7 +314,14 @@ let source = {};
 let movables = [];
 let moving = [];
 let tempPoints  = [];
+let intersections = [];
 
+// button variables
+let isDarkMask = true;
+let isRays = false;
+let isCollisionPoints = false;
+let isDrawing = false;
+let isShadows = true;
 
 function init(){
 
@@ -311,8 +332,16 @@ source = {};
 movables = [];
 moving = [];
 tempPoints  = [];
+intersections = [];
 
-let intersections = [];
+isDarkMask = false;
+isRays = false;
+isCollisionPoints = false;
+isDrawing = false;
+isShadows = true;
+
+
+
 
     addEventListener("resize",function(){
         canvas.width = innerWidth;
@@ -322,17 +351,11 @@ let intersections = [];
     });
     // walls.push( new Boundary(200,200,100,100) );
    
-    canvas.addEventListener('mousedown', e => {
-        handleClick(0);
-    });
 
-    canvas.addEventListener('mouseup', e => {
-        handleClick(1);
-    })
     
     // polygons.push( new Polygon([{x: 200, y: 100},{x:300,y:100}, {x: 350, y:250}, {x: 150, y: 300}, {x: 150, y: 200}]));
     // polygons.push( new Polygon([{x: 000, y: 500},{x:500,y:100}, {x: 550, y:250}]));
-//    polygons.addRandomPolygons2(20);
+    polygons.addRandomPolygons2(5);
     
     walls.push(new Boundary(0,0,width,0));
     walls.push(new Boundary(0,0,0,height));
@@ -350,10 +373,71 @@ let intersections = [];
 
 }
 
+canvas.addEventListener('mousedown', e => {
+    handleClick(0);
+});
+
+canvas.addEventListener('mouseup', e => {
+    handleClick(1);
+})
+
+document.getElementById("clear-canvas").addEventListener('click', e => {
+    clearCanvas();
+})
+
+document.getElementById("toggle-darkmask").addEventListener('click', e => {
+    isDarkMask=!isDarkMask;
+    if (isDarkMask){
+        e.target.className="btn active";
+    } else{
+        e.target.className="btn";
+    }
+})
+
+document.getElementById("generate-ten").addEventListener('click', e => {
+    polygons.addRandomPolygons2(10);
+})
+
+document.getElementById("toggle-rays").addEventListener('click', e => {
+    isRays=!isRays;
+    if (isRays){
+        e.target.className="btn active";
+    } else{
+        e.target.className="btn";
+    }
+})
+
+document.getElementById("toggle-collision-points").addEventListener('click', e => {
+    isCollisionPoints=!isCollisionPoints;
+    if (isCollisionPoints){
+        e.target.className="btn active";
+    } else{
+        e.target.className="btn";
+    }
+})
+
+document.getElementById("toggle-drawing").addEventListener('click', e => {
+    isDrawing=!isDrawing;
+    if (isDrawing){
+        e.target.className="btn active";
+    } else{
+        e.target.className="btn";
+    }
+})
+
+document.getElementById("toggle-shadows").addEventListener('click', e => {
+    isShadows=!isShadows;
+    if (isShadows){
+        e.target.className="btn active";
+    } else{
+        e.target.className="btn";
+    }
+})
+
 function animate(){
     
     requestAnimationFrame(animate);
-    removeAllChildNodes(document.getElementById("display"));
+    
     c.clearRect(0,0,canvas.width, canvas.height);
    
 
@@ -361,12 +445,23 @@ function animate(){
     polygons.forEach(polygon => polygon.update());
     walls.forEach(wall => wall.update());
 
-    
+   
     const visibleArea = source.look(raychecks, 0);
-    drawInvertPolygon(visibleArea[0].vertices, 0.8);    
-     
-    // source.drawMasks();
+    if (isShadows){
+        drawInvertPolygon(visibleArea[0].vertices, 0.8);    
+    }
+    
+
+    if(isDarkMask) source.drawMasks();
+
     c.globalCompositeOperation="source-over";
+    if (isCollisionPoints){
+        drawDots(visibleArea[1]);
+    }
+
+    if (isRays){
+        drawLines({x:mouse.x, y:mouse.y}, visibleArea[1])
+    }
 
     drawTempPoly(tempPoints);
     c.fillStyle = "rgb(100,100,100)";

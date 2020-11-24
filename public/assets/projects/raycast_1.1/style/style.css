@@ -59,4 +59,16 @@ body, html{
     font-size: 10px;
     margin: 5px;
 }
+.btn {
+    border: none;
+    outline: none;
+    
+    background-color: #f1f1f1;
+    cursor: pointer;
+    margin:1px;
+  }
 
+.active{
+    background-color: #666;
+    color: white;
+}

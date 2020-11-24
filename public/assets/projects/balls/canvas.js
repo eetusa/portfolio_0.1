@@ -11,6 +11,11 @@ let mouse = {
     y: 0
 }
 
+let touch = {
+    x:0,
+    y:0
+}
+
 const colors = [
     '#2185C5',
     '#7ECEFD',
@@ -32,6 +37,16 @@ addEventListener("mousemove", function(event){
     mouse.x = event.clientX;
     mouse.y = event.clientY;
 });
+
+addEventListener('touchstart', function(e){
+    touch.x = e.changedTouches[0].pageX;
+    touch.y = e.changedTouches[0].pageY;
+})
+
+addEventListener('touchmove', function(e){
+    touch.x = e.changedTouches[0].pageX;
+    touch.y = e.changedTouches[0].pageY;
+})
 
 addEventListener("resize",function(){
     canvas.width = innerWidth;
@@ -483,6 +498,7 @@ function Ball(x, y, radius, color, velocity, name, gravity){
     this.colorM;
     this.gravity = gravity
     this.clicked = 0;
+    this.touched = 0;
     this.px = x;
     this.py = y;
     this.offsetx = 0;
@@ -548,9 +564,21 @@ function Ball(x, y, radius, color, velocity, name, gravity){
         
         }
 
-        if (this.clicked == 1){
+        if (this.clicked === 1){
             this.x = mouse.x+this.offsetx;
             this.y = mouse.y+this.offsety;
+            this.velocity.x = this.x-this.px;
+            this.velocity.y = this.y-this.py;
+            
+        } else {
+            
+        }
+
+        
+        if (this.touched === 1){
+            console.log("heii")
+            this.x = touch.x+this.offsetx;
+            this.y = touch.y+this.offsety;
             this.velocity.x = this.x-this.px;
             this.velocity.y = this.y-this.py;
             
@@ -622,7 +650,7 @@ addEventListener('keyup', function(e){
         
     }
 });
-
+let clicked = 0;
     addEventListener('keyup', function(e){
         if (e.keyCode==32){
             
@@ -637,19 +665,47 @@ addEventListener('keyup', function(e){
         }
     });
 
-    addEventListener('mousedown',e => {
+    addEventListener('touchend', function(e){
+        e.preventDefault();
+        if(clicked===0){
+            balls.push(new Ball(e.changedTouches[0].pageX,e.changedTouches[0].pageY,randomIntFromRange(10,50),"red",{x:0,y:2},1,gravity));
+        } else {
+            balls.forEach(ball => {
+            
+                ball.touched = 0;
         
+            });
+        }
+    });
+
+    addEventListener('touchstart', function(e){
+        balls.forEach(ball => {
+            
+            if (Math.pow(e.changedTouches[0].pageX-ball.x,2)+Math.pow(e.changedTouches[0].pageY-ball.y,2) < Math.pow(ball.radius,2)){
+               ball.offsetx = ball.x-e.changedTouches[0].pageX;
+               ball.offsety = ball.y-e.changedTouches[0].pageY;
+               ball.touched = 1;
+               clicked = 1;
+                
+            }
+    
+        });
+    })
+    addEventListener('mousedown',e => {
+        let sugar = 0;
         balls.forEach(ball => {
             
             if (Math.pow(mouse.x-ball.x,2)+Math.pow(mouse.y-ball.y,2) < Math.pow(ball.radius,2)){
                ball.offsetx = ball.x-mouse.x;
                ball.offsety = ball.y-mouse.y;
-               console.log(ball.offsetx+" "+ball.x+" "+mouse.x) 
                 ball.clicked = 1;
-                
+                sugar = 1;
             }
     
         });
+        if (!sugar){
+            balls.push(new Ball(mouse.x,mouse.y,randomIntFromRange(10,50),"red",{x:0,y:2},1,gravity));
+        }
     });
 
     addEventListener("mouseup",e => {
