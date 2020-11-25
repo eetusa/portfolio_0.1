@@ -33,6 +33,7 @@ const Content = () => {
       }
     } 
     resetY()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id.pathname])
 
   const resetY = () => {

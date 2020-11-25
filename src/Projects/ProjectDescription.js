@@ -2,17 +2,26 @@ import React from 'react';
 import { Image } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import ProjectTagsSingleView from './ProjectTagsSingleView';
+import ReadMore from '../components/ReadMore';
 
 
 const ProjectDescription = ({data}) => {
+    if (data.readmoreimg){
 
+    }
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12 py-1 px-0 project-description order-3 order-sm-1">
                     {parse(data.body)}
+                    {data.readmore && 
+                    <ReadMore images={data.readmoreimages}>
+                        {parse(data.readmore)}
+                    </ReadMore>
+                }
                 </div>
-            
+
+                
             
                 <div className="col-12 my-2 mx-0 px-0 order-2">
                     <ProjectTagsSingleView tags={data.tags} />

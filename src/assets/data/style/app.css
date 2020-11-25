@@ -825,19 +825,28 @@ ol li{
 }
 
 .read-more-content-wrapper{
-  
   overflow: hidden;
   background-color: rgb(247, 247, 247);
 }
 .read-more-show{
   transition: max-height 1s ease-in-out;
-  max-height:500px;
+  max-height:1000px;
 }
 
 .read-more-hide{
   max-height: 0px;
   transition: max-height 1s ease-in-out;
 }
+
+.read-more-content{
+  padding-top: 10px;
+  /* display:flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+
+
 
 .tooltip-kelmi{
   max-height: 80vh;

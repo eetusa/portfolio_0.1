@@ -22,6 +22,7 @@ function drawLines(start, endPointArray, brightness){
        
         c.globalAlpha = brightness;
           c.strokeStyle="rgb(200,200,200)";
+          c.lineWidth=1;
           c.beginPath();
           c.moveTo(pos.x,pos.y);
           c.lineTo(array[i].x,array[i].y);
