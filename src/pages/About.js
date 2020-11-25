@@ -144,7 +144,7 @@ const About = () => {
                 </div>       
                 <div className="col-12 col-sm-7 m0 justify-content-center fade-in-first order-1 order-sm-1 py-4" style={{ textAlign: "center", display: "flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
                     <p>I first got into programming in sixth grade, I think, playing around with CoolBasic. That was just the spark. That spark 
-                    kept smoldering for almost two decades until I started properly studying programming. <br></br><br></br>
+                    kept smoldering for almost two decades until I finally got into programming again - this time for good. <br></br><br></br>
 
                     At the moment, I am a first-year student in Satakunta University of Applied Sciences.<br></br><br></br>
 
