@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const ReadMore = (props) => {
     let pchildren;
@@ -70,11 +70,12 @@ const ReadMore = (props) => {
         
 
     }
-
+   
     const [readMoreExpanded, setReadMoreExpanded] = useState(false);
     return (
-        
-            <div className="row px-0 mx-0 py-4">
+        <>
+            
+            <div className="row px-0 mx-0 py-4" >
                 <div 
                     className={readMoreExpanded ? 
                         "col-12 read-more-content-wrapper read-more-show" 
@@ -83,10 +84,16 @@ const ReadMore = (props) => {
                     <Readme children={pchildren}></Readme>
                 </div>
                 <div className="col-12 text-center">
-                           <button onClick={() => setReadMoreExpanded(!readMoreExpanded)} className="read-more-button">{readMoreExpanded && "That's enough"} {!readMoreExpanded && "Read more"} </button> 
+                    <button 
+                        onClick={() => { 
+                                setReadMoreExpanded(!readMoreExpanded)
+                            }
+                        }
+                        className="read-more-button">{readMoreExpanded && "That's enough"} {!readMoreExpanded && "Read more"} 
+                    </button> 
                 </div>
             </div>
-        
+    </>
     );
 }
 

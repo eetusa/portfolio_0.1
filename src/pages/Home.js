@@ -37,7 +37,7 @@ const Home = () => {
                             height: "2000px",
                             // background: "rgb(240,240,240)",
                             // background: "linear-gradient(#e66465, #9198e5)",
-                            background: "#e66465",
+                            // background: "#e66465",
                             // background: "linear-gradient(to right, rgb(240,240,240) 0%, rgba(240,240,240,0) 100%)",
                             marginLeft:"5px"
                         }}>
