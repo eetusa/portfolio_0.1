@@ -58,7 +58,7 @@
     {
         "titleEN": "Peek 0.9",
         "descriptionEN": "A Minecraft plugin that gives a toggleable spectator mode with restrictions.",
-        "bodyEN": "<h5>A Minecraft plugin for restricted spectator mode</h5> <p>The plugin was built upon the idea of giving a bit more freedom to building without being as game breaking as specator mode in survival. <br><br>The mod provides a toggleable mode that lets the user fly as in the spectator mode, but with two major restrictions:</p> <ol><li>There's a maximium range on the fly distance.</li><li>When toggled off, the player is returned to their original position.</li></ol><p>These restrictions enable the player to get a wider view of their build or smaller details inside compact builds while not making building or playing easier - in a way.</p>",
+        "bodyEN": "<h5>A Minecraft plugin for restricted spectator mode</h5> <p>The plugin was built upon the idea of giving a bit more freedom to building without being as game breaking as spectator mode in survival. <br><br>The mod provides a toggleable mode that lets the user fly as in the spectator mode, but with two major restrictions:</p> <ol><li>There's a maximium range on the fly distance.</li><li>When toggled off, the player is returned to their original position.</li></ol><p>These restrictions enable the player to get a wider view of their build or smaller details inside compact builds while not making building or playing easier - in a way.</p>",
         "image": "mine/mine.png",
         "images": [
                     {
