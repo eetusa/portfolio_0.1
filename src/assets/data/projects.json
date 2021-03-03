@@ -45,6 +45,20 @@
         "date":"2020/11/10"
     },
     {
+        "titleEN": "Chess Engine 0.9",
+        "descriptionEN": "A chess engine with complete chess logics, GUI, perft tests and AI. Currently under developement.",
+        "bodyEN": "<h5>A chess engine with logics, GUI and AI</h5><p> I needed to learn C#, so I set out to create a chess engine with an simple AI. It'd be a fun project to learn the language while also learning about minimax algorithm, chess programming and testing.<br><br> The engine is under developement. The current features are: </p><ul><li>Complete chess logics</li><li>Perft testing with automatic result compare with a well known engine, <a target='_blank' href='https://stockfishchess.org/'>Stockfish</a></li><li>Load boards with <a target='_blank' href='https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation'>FEN</a></li><li>Stupid AI, random legal moves</li></ul><p> Features to be added: </p><ul><li>Minimax algorithm with alpha-beta pruning</li><li>Evaluation of board states with more finesse than calculating piece value</li><li>Optimization of legal move search</li></ul>",
+        "images": [
+            {
+                "img": "chessengine/chess2.png"
+            }
+        ],
+        "image": "chessengine/chess.png",
+        "id": "8",
+        "tags": "C#",
+        "date":"2021/03/03"
+    },
+    {
         "titleEN": "Circle Collision Test",
         "descriptionEN": "A circle collision simulation made for learning purposes.",
         "bodyEN": "<h5>A circle collision simulation made with pure JavaScript</h5><p> I came up with this challenge for myself to practice <span class='text-info'>JavaScript</span>. As with my <a target='_blank' href='/projects/calculator'>calculator</a>, I had just began learning JS and wanted to try out different stuff. The math was inspired by <a target='_blank' href='https://www.vobarian.com/collisions/2dcollisions2.pdf'>Chad Berchek's paper</a>.<br><br>The project was definitely a challenge, as accurate collisions weren't achieved straight out of the gate with Berchek's paper. After trial and error I got the collisions working very nicely. The balls are still a bit restless. <br><br>The application isn't still optimized properly - the collision check is too broad and as such too expensive. The 'physics' aren't time dependent but <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame'>requestAnimationFrame()</a> dependent, so 'gravity' may vary, so to speak. I'll get to fixing it someday!</p>",

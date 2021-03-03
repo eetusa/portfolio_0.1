@@ -7,7 +7,7 @@ import OrderByDropDown from "../components/OrderByDropDown";
 
 const GridView = () => {
   const {width} = useWindowDimensions();
-  const [sortState, setSortState] = useState({value: "title", label: "Title"})
+  const [sortState, setSortState] = useState({value: "newest", label: "Newest"})
   const lang = "EN";
 
   let data = [...datax];

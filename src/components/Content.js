@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import useWindowDimensions from "../api/useWindowDimensions";
 import useSite from "../api/useSite";
 import Home from "../pages/Home";
+import Blog from "../pages/Blog";
 
 
 
@@ -79,6 +80,9 @@ const Content = () => {
           <Route path="/home">
             <Home />
           </Route>
+          {/* <Route path="/blog">
+            <Blog />
+          </Route> */}
           <Route path="/about">
             <About />
           </Route>
