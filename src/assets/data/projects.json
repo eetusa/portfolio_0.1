@@ -1,7 +1,7 @@
 [
     {
         "titleEN": "Ray Casting Tests",
-        "descriptionEN": "Ray casting tests applied to simulate shadows.",
+        "descriptionEN": "Ray casting tests applied to calculate and simulate shadows against drawn and random generated polygons in real time.",
         "image": "raycast/raycast.png",
         "demo": "/assets/projects/raycast_1.1/index.html",
         "tags": "javascript, canvas",
@@ -53,7 +53,7 @@
                 "img": "chessengine/chess2.png"
             }
         ],
-        "image": "chessengine/chess.png",
+        "image": "chessengine/chess3.png",
         "id": "8",
         "tags": "C#",
         "date":"2021/03/03"
