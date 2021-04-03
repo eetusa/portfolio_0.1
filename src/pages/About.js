@@ -142,15 +142,14 @@ const About = () => {
                         alt="Me" 
                     />
                 </div>       
-                <div className="col-12 col-sm-7 m0 justify-content-center fade-in-first order-1 order-sm-1 py-4" style={{ textAlign: "center", display: "flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
-                    <p>I first got into programming in sixth grade, I think, playing around with CoolBasic. That was just the spark. That spark 
-                    kept smoldering for almost two decades until I finally got into programming again - this time for good. <br></br><br></br>
+                <div className="col-12 col-sm-7 m0 justify-content-center fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
+                    <p>
+                    <b>My name is Eetu Salli.</b><br></br><br></br>
 
-                    At the moment, I am a first-year student in Satakunta University of Applied Sciences.<br></br><br></br>
-
-                    Before that I've studied Mathemathics and teaching in an University.<br></br><br></br>
-
-                    <b>My name is Eetu Salli.   </b></p>
+                    I work as a Project Researcher at Satakunta University of Applied Sciences.<br></br><br></br>
+                    I'm also getting my Bachelor's degree in Computer Science. <br></br>
+                    Prior to this field I studied mathemathics and to be a classroom teacher.
+                </p>
                 </div>
             </div>
             
@@ -171,7 +170,7 @@ const About = () => {
                     <li><span className="highlight-word">A warehouse worker</span> in Rauma shipyard <i>Transval Oy</i></li>
                 </ul>
                 <p>My current abilities in computing:</p>
-                <div className="px-4 py-2" style={{backgroundColor:"rgb(230,230,230)"}}><p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>I have ability</b> in JS, Java and Python. In web dev I'm familiar with HTML, CSS, PHP and React. This site has been built with React and uses Bootstrap.</p> <p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>Currently</b> I'm learning C# and getting familiar using Linux via a terminal.</p><p> <b>In the upcoming spring 2021</b> I will be learning <i>at least</i> more about databases, more advanced C# and C/C++ while continuing to develope my current areas of knowledge.</p></div>
+                <div className="px-4 py-2" style={{backgroundColor:"rgb(230,230,230)"}}><p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>I have ability</b> in JS, Java, Python, C# and C/C++. In web development I'm familiar with HTML, CSS, PHP and React. This site has been built with React and uses Bootstrap.</p> <p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>Currently</b> I'm getting familiar with mobile device app development, VR applications and data analytics.</p></div>
                 <ReactTooltip id="games" className="tooltip-text" effect="solid">I'm a pretty good shot in CS:GO and quite alright in Dota 2!</ReactTooltip>
                 <ReactTooltip id='kelmi'  className="tooltip-kelmi" place="right"  effect="solid"><img alt="Kelmi dog" style={{position:"absolute",maxHeight:"100%", top:"0",left:"0"}} src={require(`../assets/images/siteimages/kelmi.png`)}/></ReactTooltip>
                 <ReactTooltip id="music" className="tooltip-text" effect="solid">I play guitar! And love to play other instruments too.</ReactTooltip>
