@@ -156,10 +156,11 @@ const About = () => {
         <ReadMore>
                 <p>I'm..</p>
                 <ul style={{paddingTop:"0px"}}>
-                    <li>29 years old</li>
-                    <li>interested in <span data-for="music" data-type="success" className="text-success" data-tip="">music</span>, movies, <span data-for="games" data-type="error" className="text-danger" data-tip="">games</span>, tv series, family & friends</li>
+                    <li>30 years old</li>
+                    <li>interested in technology, <span data-for="music" data-type="success" className="text-success" data-tip="">music</span>, movies, <span data-for="games" data-type="error" className="text-danger" data-tip="">games</span>, tv series, family & friends</li>
                     <li>a happy owner of a Portuguese Water Dog, <span data-for='kelmi' className="text-info" data-tip='Kelmi'>Kelmi</span></li>
                 </ul>
+                <p>On my free time I dabble with different things going from game developement to curiosities to utility programs to IOT devices. I have a thing for stuff related to math and algorithms and I enjoy holistics approaches to projects. I really enjoy envisioning procuts from front to back and implementing my ideas.</p>
                 <p>Outside of the field - among other things - I have experience as..</p>
                 <ul>
                     <li><span className="highlight-word">A classroom teacher</span> in elementary school <i>City of Rauma, City of Pori</i></li>
@@ -169,8 +170,8 @@ const About = () => {
                     <li><span className="highlight-word">A longshoreman</span> in Port of Rauma <i>Valdoring Oy</i></li>
                     <li><span className="highlight-word">A warehouse worker</span> in Rauma shipyard <i>Transval Oy</i></li>
                 </ul>
-                <p>My current abilities in computing:</p>
-                <div className="px-4 py-2" style={{backgroundColor:"rgb(230,230,230)"}}><p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>I have ability</b> in JS, Java, Python, C# and C/C++. In web development I'm familiar with HTML, CSS, PHP and React. This site has been built with React and uses Bootstrap.</p> <p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>Currently</b> I'm getting familiar with mobile device app development, VR applications and data analytics.</p></div>
+                {/* <p>My current abilities in computing:</p>
+                <div className="px-4 py-2" style={{backgroundColor:"rgb(230,230,230)"}}><p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>I have ability</b> in JS, Java, Python, C# and C/C++. In web development I'm familiar with HTML, CSS, PHP and React. This site has been built with React and uses Bootstrap.</p> <p style={{paddingBottom:"2px", paddingTop:"2px", marginTop:"2px",marginBottom:"2px"}}><b>Currently</b> I'm getting familiar with mobile device app development, VR applications and data analytics.</p></div> */}
                 <ReactTooltip id="games" className="tooltip-text" effect="solid">I'm a pretty good shot in CS:GO and quite alright in Dota 2!</ReactTooltip>
                 <ReactTooltip id='kelmi'  className="tooltip-kelmi" place="right"  effect="solid"><img alt="Kelmi dog" style={{position:"absolute",maxHeight:"100%", top:"0",left:"0"}} src={require(`../assets/images/siteimages/kelmi.png`)}/></ReactTooltip>
                 <ReactTooltip id="music" className="tooltip-text" effect="solid">I play guitar! And love to play other instruments too.</ReactTooltip>
