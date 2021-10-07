@@ -7,6 +7,7 @@ import ProjectDescription from './ProjectDescription';
 import ProjectScreenshots from './ProjectScreenshots';
 import ProjectDemo from './ProjectDemo';
 import ProjectVideo from './ProjectVideo';
+import ProjectVideoEmbedded from './ProjectVideoEmbedded';
 import { Link as L } from "react-router-dom";
 
 
@@ -125,6 +126,14 @@ const SingleView = () => {
                                 Demo
                             </button>
                             }
+                            {pr.videoEmbedded && 
+                                <button 
+                                onClick={() => setTab("4")} 
+                                className={tab==="4" ? "tab-button-active" : "tab-button"}
+                            >
+                                Video
+                            </button>
+                            }
                             <div className="tab-filler"></div>
                            {width > 576 && <h4 className="tab-title px-2">{pr.title}</h4>}
                         </div>
@@ -138,6 +147,7 @@ const SingleView = () => {
                             {tab === "1" && <ProjectScreenshots data={pr}/>}
                             {tab === "2" && <ProjectVideo data={pr}/>}
                             {tab === "3" && ( pr.demo && <ProjectDemo data={pr}/> )}
+                            {tab === "4" && <ProjectVideoEmbedded data={pr}/>}
                         </div>
                     </div>
                 </div>
