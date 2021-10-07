@@ -4,11 +4,11 @@
         "descriptionEN": "Ray casting tests applied to calculate and simulate shadows against drawn and random generated polygons in real time.",
         "image": "raycast/raycast.png",
         "demo": "/assets/projects/raycast_1.1/index.html",
-        "tags": "javascript, canvas",
+        "tags": "javascript, ray casting",
         "id": "0",
-        "bodyEN":"<h5>A test applying ray casting to achieve varying results</h5><p>The project began with an interest to the technique and ended up more as a visual effect. To me, ray casting combined learning JS, learning a new skill and math. What's there not to love?<br><br>In ray casting 'rays' are sent outwards from a common point while detecting if a ray collides with anything. These collision points is the information that motivates the whole procedure. I experimented with this information, ending up with a nice shadow effect. <br><br>The math heavy parts were inspired from different sources, such as <a target='_blank' href='http://geomalgorithms.com/'>Geometry Algorithms</a> and <a href='http://stackoverflow.com' target='_blank'>Stack OverFlow</a>.</p>",
+        "bodyEN":"<h5>A test applying ray casting to achieve varying results</h5><p>Raycasting is such a fundamental building block in rendering and game logics while being a simple yet interesting concept. I wanted to try it out, and ended up with a quite pretty visual effect.<br><br>In ray casting 'rays' are sent outwards from a common point while detecting if a ray collides with anything. These collision points is the information that motivates the whole procedure. For example in games collision detection can be done with ray casts: if a ray hits something and the distance to this hit point is of certain amount, it can mean a collision has happened or is about to happen. <br><br>I experimented with this information, ending up with a nice shadow effect. I recommended checking out the demo and playing around with it! <br><br>The math heavy parts were inspired from different sources, such as <a target='_blank' href='http://geomalgorithms.com/'>Geometry Algorithms</a> and <a href='http://stackoverflow.com' target='_blank'>Stack OverFlow</a>.</p>",
         "date": "2020/09/30",
-        "readmore": "<p>The key things when it comes to the cost of ray casting are the amount of rays and the amount of objects each ray checks itself against. The problem is that if your rays are cast at static angles, like one per degree, you might cast way more rays than necessary and the accuracy can be pretty bad. Casting 1000 rays can get pretty accurate results, but it can get expensive.<br><br> I solved this problem by casting rays at each corner of the polygons. Casting three rays per vertex - one directly at the corner and two slightly off - ensures you get a accurate hits on the edge of a polygon (from cast PoV) and accurate hits on objects behind the polygon.  <img alt='Casting rays at vertices and intersections' src='raycast/raycast_example.png'></img>",
+        "readmore": "<p>The key things when it comes to the cost of ray casting are the amount of rays and the amount of objects each ray checks itself against. The problem is that if your rays are cast at static angles, like one per degree, you might cast way more rays than necessary and the accuracy can be pretty bad. You can up the amount of rays to get more accurate, but it can get expensive and the system still wouldn't be deterministic.<br><br> I solved this problem by casting rays at each corner of the polygons. Casting three rays per vertex - one directly at the corner and two slightly off - ensures you get a accurate hits on the edge of a polygon (from cast PoV) and accurate hits on objects behind the polygon. As the polygons can overlap, it's also important to find these intersections and treat them as vertices too.<br><br>This isn't an end all cure all solution as when the amount of objects (vertices) grow the amount of rays grow while also the amount objects to check against per ray grows too. If this effect were to be used in a game, it definitely would need some optimizing.</p>  <img alt='Casting rays at vertices and intersections' src='raycast/raycast_example.png'></img>",
         "readmoreimages": [
             {
                 "img": "raycast/raycast_example.png"
@@ -16,12 +16,37 @@
             ]
     },
     {
+        "titleEN": "Remote Start Device For PC",
+        "descriptionEN": "An IOT device to start your computer remotely from wherever.",
+        "image": "RemoteStartSystem/box_real.jpg",
+        "tags": "IOT, Arduino, 3D Printing",
+        "id": "9",
+        "bodyEN":"<h5>An IOT project for remotely starting your computer</h5><p>I found myself in need of access to files on my home desktop every so often and additionally sometimes wanting the computing power that the desktop has and my laptop doesn't. Instead of solving this in a sensible manner, I wanted to build a device that would help me boot up my desktop remotely.<br><br>The basic idea is that the device acts in the same role as the PC's power button does: if it closes the specific circuit on the motherboard, the computer starts (or shuts down). Physically closing and opening the circuit is done by a relay. The device needs only two functions: 'close the circuit for 1s, then open it' and the same for 5 seconds to have the option for force shutdown. <br><br>The relay is controlled by an <a target='_blank' href='https://www.arduino.cc/en/Guide/MKR1000'>Arduino MKR1000</a>, which acts as a server. As a server, it's simple to control remotely via the internet. I wrote a simple <a target='_blank' href='https://reactnative.dev/'>React Native</a> application that calls the server API.<br><br>I designed a case for the device with <a target='_blank' href='https://www.autodesk.fi/products/fusion-360/overview'>Fusion 360</a> and 3D printed it.</p>",
+        "date": "2021/10/07",
+        "images": [
+            {
+                "img": "RemoteStartSystem/box_real.jpg"
+            },
+            {
+                "img": "RemoteStartSystem/box_real2.jpg"
+            },
+            {
+                "img": "RemoteStartSystem/box_cad2.png"
+            },
+            {
+                "img": "RemoteStartSystem/remote_client.jpg"
+            }
+        ],
+        "readmore": "<p>The device is connected in paraller with the power button, which means that both the power button and device can function. Installing the device means that instead of connecting the power button wires to the pins on your motherboard, you connect them to the device, and connect wires from the device to where the power button wires would have gone.<br><br>Overall I found the project to be a refreshing and teaching experience, as I had to revise my electronics and had to learn Arduino and CAD.<br><br>As per most hobby projects - the destination isn't the goal, but the journey.<br><br></p>"
+        
+    },
+    {
         "titleEN": "Calculator",
         "descriptionEN": "A calculator, evaluating the calculation with algorithms using recursion.",
-        "bodyEN": "<h5>A calculator done as exercise to learn JavaScript</h5> <p>I decided to build a calculator as an exercise to learn <span class='text-info'>JavaScript</span>. It combined CSS, DOM-manipulation via Javascript and just fun algorithm tinkering. <br><br> The application runs a recursive algorithm on the given calculation, solving from the 'deepest sub-calculation' to the 'surface'. <br><br> Basically, if the calculation is the following: <code><b>5+(4/2)</b></code>, the algorithm solves it in the following steps:</p><ol><li><code>5+<b>(4/2)</b></code></li><li><code><b>(</b>4/2<b>)</b></code></li><li><code><b>4/2</b></code></li><li><code><b>2</b></code></li><li><code><b>5+2</b></code></li><li><code><b>7</b></code></li></ol> <p>The app isn't perfect as it has at least one know bug (try entering '+(-)' -- it shouldn't let you enter incorrect inputs) and the ANS feature was added as an afterthought and works like one. Otherwise I'm pretty happy with it, considering the context.</p>",
+        "bodyEN": "<h5>A calculator using recursive algorithm</h5> <p>I decided to build a calculator as an exercise to learn <span class='text-info'>JavaScript</span>. On top of being a good problem to combine JS and DOM-manipulation, it was a fun exercise in algorithms too. <br><br> The application runs a recursive algorithm on the given calculation, solving from the 'deepest sub-calculation' to the 'surface'. <br><br> Basically, if the calculation is the following: <code><b>5+(4/2)</b></code>, the algorithm solves it in the following steps:</p><ol><li><code>5+<b>(4/2)</b></code></li><li><code><b>&nbsp;&nbsp;(</b>4/2<b>)</b></code></li><li><code><b>&nbsp;&nbsp;&nbsp;4/2</b></code></li><li><code><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</b></code></li><li><code><b>5+2</b></code></li><li><code><b>7</b></code></li></ol> <p>The app isn't perfect as it has at least one know bug (try entering '+(-)' -- it shouldn't let you enter incorrect inputs) and the ANS feature was added as an afterthought and works like one. Otherwise I'm pretty happy with it, considering the context.</p>",
         "image": "calc/calc.png",
         "demo": "/assets/projects/calculator0.9/index.html",
-        "demotext": "If you look at the developer console, you can see the (a bit incoherent) stages of the algorithm.",
+        "demotext": "If you look at the developer console, you can see the (a bit incoherent, as they were for debugging purposes) stages of the algorithm.",
         "tags": "javascript, css, html",
         "id": "1",
         "date": "2020/08/10"
