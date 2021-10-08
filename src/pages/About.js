@@ -160,7 +160,7 @@ const About = () => {
                     <li>interested in technology, <span data-for="music" data-type="success" className="text-success" data-tip="">music</span>, movies, <span data-for="games" data-type="error" className="text-danger" data-tip="">games</span>, tv series, family & friends</li>
                     <li>a happy owner of a Portuguese Water Dog, <span data-for='kelmi' className="text-info" data-tip='Kelmi'>Kelmi</span></li>
                 </ul>
-                <p>On my free time I dabble with different things going from game developement to curiosities to utility programs to IOT devices. I have a thing for stuff related to math and algorithms and I enjoy holistics approaches to projects. I really enjoy envisioning procuts from front to back and implementing my ideas.</p>
+                <p>On my free time I dabble with different things going from game development to curiosities to utility programs to IOT devices. I have a thing for stuff related to math and algorithms and I enjoy holistics approaches to projects. I really enjoy envisioning procuts from front to back and implementing my ideas. You can see my hobby projects <a href='\projects'>here</a>.</p>
                 <p>Outside of the field - among other things - I have experience as..</p>
                 <ul>
                     <li><span className="highlight-word">A classroom teacher</span> in elementary school <i>City of Rauma, City of Pori</i></li>
