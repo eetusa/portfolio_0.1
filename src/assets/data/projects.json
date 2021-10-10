@@ -39,6 +39,17 @@
         
     },
     {
+        "titleEN": "Falling sand system",
+        "descriptionEN": "Testing out a simple falling sand system.",
+        "image": "sandspiel/sand_card.jpg",
+        "tags": "Unity, C#, Falling sand",
+        "id": "12",
+        "bodyEN":"<h5>A falling sand system</h5><p>Complexity from simplicity. That's the beauty of cellular automaton models and, as such, the beauty of falling sand games too (such as <a target='_blank' href='https://noitagame.com/'>Noita</a>). The idea is to give simple rules to single 'cells', or pixels in our case. When each pixel follow a set of rules surprisingly complex behaviours can occur. I played around a bit with the concept.<br><br>I only got to sand and water (and a 'static' element) before I ran out of time to tinker around with it more. It's decently interesting as is, but could use more elements and more optimization. You can check out the video demo.</p>",
+        "date": "2021/05/26",
+        "videoEmbedded": "https://www.youtube.com/embed/vbrezCkFj60"
+        
+    },
+    {
         "titleEN": "Remote Start Device For PC",
         "descriptionEN": "An IOT device to start your computer remotely from wherever.",
         "image": "RemoteStartSystem/box_card.jpg",
