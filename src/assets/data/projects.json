@@ -13,7 +13,8 @@
             {
                 "img": "raycast/raycast_example.png"
             }
-        ]
+        ],
+        "github": "https://github.com/eetusa/raycastTests"
     }, 
     {
         "titleEN": "Destructible Cube World",
@@ -83,7 +84,8 @@
         "demotext": "If you look at the developer console, you can see the (a bit incoherent, as they were for debugging purposes) stages of the algorithm.",
         "tags": "javascript",
         "id": "1",
-        "date": "2020/08/10"
+        "date": "2020/08/10",
+        "github": "https://github.com/eetusa/CalculatorJS"
     },
     {
         "titleEN": "Slide Browser",
@@ -101,7 +103,8 @@
         "id": "7",
         "video": "slidebrowserNew.webm",
         "tags": "javascript, react, electron, java",
-        "date":"2020/11/10"
+        "date":"2020/11/10",
+        "github":"https://github.com/eetusa/SlideBrowser"
     },
     {
         "titleEN": "Chess Engine 0.9",
@@ -115,7 +118,8 @@
         "image": "chessengine/chess3.png",
         "id": "8",
         "tags": "C#",
-        "date":"2021/03/03"
+        "date":"2021/03/03",
+        "github": "https://github.com/eetusa/ChessProject"
     },
     {
         "titleEN": "Circle Collision Test",
@@ -126,7 +130,8 @@
         "demotext":"Click to spawn a ball. Press space to pause physics. Click & drag & throw balls.",
         "tags": "javascript",
         "id": "2",
-        "date": "2020/08/20"
+        "date": "2020/08/20",
+        "github": "https://github.com/eetusa/ball_physics"
     },
     {
         "titleEN": "Peek 0.9",
@@ -144,7 +149,8 @@
         "video": "minevideo.webm",
         "tags": "java",
         "id": "3",
-        "date": "2020/01/04"
+        "date": "2020/01/04",
+        "github":"https://github.com/eetusa/Peek"
     },
     {
         "titleEN": "ASCII Chess",
