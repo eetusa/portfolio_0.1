@@ -7,7 +7,7 @@ import Contact from "../pages/Contact";
 import useWindowDimensions from "../api/useWindowDimensions";
 import useSite from "../api/useSite";
 import Home from "../pages/Home";
-import Blog from "../pages/Blog";
+//import Blog from "../pages/Blog";
 
 
 
@@ -29,7 +29,7 @@ const Content = () => {
       let temp = [...projectState];
       if (temp[0] !== subtitle) {
         temp[0] = subtitle;
-        temp[1] = true;
+      //  temp[1] = true;
         setProjectState(temp);
       }
     } 

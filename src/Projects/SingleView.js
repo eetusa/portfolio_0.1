@@ -15,7 +15,7 @@ import { Link as L } from "react-router-dom";
 
 const SingleView = () => {
     const {width} = useWindowDimensions();
-    const {projectState, setProjectState} = useSite();
+    const {projectState} = useSite();
     const [tab, setTab] = useState("0")
     const id = useLocation().pathname.split("/projects/")[1];
 
@@ -32,27 +32,44 @@ const SingleView = () => {
     } else {
 
     }
-   
-    useEffect(() => {
-        let temp = [...projectState];
-        let change=false;
-
-        if(projectState[1]===false){
-            temp[1] = true;
-            change=true;
-        }
-        if (projectState[2]===false){
-            temp[2] = true;
-            change=true;
-        }
-        if (change){
-            setProjectState(temp);
-        }
-    })
 
     useEffect( () => {
         setTab("0");
     },[id])
+
+    const orderArrayalphabetically = (array) => {
+        array.sort(function (a,b) {
+          if (a.title > b.title) {
+            return 1;
+          }
+          if (b.title > a.title){
+            return -1;
+          }
+          return 0;
+        });
+      }
+    
+      const orderArrayFromNewest = (array) => {
+        array.sort(function(a,b){
+          return new Date(b.date) - new Date(a.date);
+        })
+      }
+    
+      const orderArrayFromOldest = (array) => {
+        array.sort(function(a,b){
+          return new Date(a.date) - new Date(b.date);
+        })
+      }
+     
+      if (projectState[1].value==="newest"){
+          orderArrayFromNewest(data);
+      }
+      if (projectState[1].value==="oldest"){
+          orderArrayFromOldest(data);
+      }
+      if (projectState[1].value==="title"){
+          orderArrayalphabetically(data);
+      }
 
     const resourceTitle = (e) => {
         if (e.indexOf(' ')===-1){
@@ -78,6 +95,7 @@ const SingleView = () => {
             pr = data[i];
         }
     }
+
 
 
     return (

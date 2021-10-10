@@ -45,7 +45,7 @@
         "tags": "IOT, Arduino, 3D Printing",
         "id": "9",
         "bodyEN":"<h5>An IOT project for remotely starting your computer</h5><p>I found myself in need of access to files on my home desktop every so often and additionally sometimes wanting the computing power that the desktop has and my laptop doesn't. Instead of solving this in a sensible manner, I wanted to build a device that would help me boot up my desktop remotely.<br><br>The basic idea is that the device acts in the same role as the PC's power button does: if it closes the specific circuit on the motherboard, the computer starts (or shuts down). Physically closing and opening the circuit is done by a relay. The device needs only two functions: 'close the circuit for 1s, then open it' and the same for 5 seconds to have the option for force shutdown. <br><br>The relay is controlled by an <a target='_blank' href='https://www.arduino.cc/en/Guide/MKR1000'>Arduino MKR1000</a>, which acts as a server. As a server, it's simple to control remotely via the internet. I wrote a simple <a target='_blank' href='https://reactnative.dev/'>React Native</a> application that calls the server API.<br><br>I designed a case for the device with <a target='_blank' href='https://www.autodesk.fi/products/fusion-360/overview'>Fusion 360</a> and 3D printed it.</p>",
-        "date": "2021/10/07",
+        "date": "2021/09/11",
         "images": [
             {
                 "img": "RemoteStartSystem/box_real.jpg"

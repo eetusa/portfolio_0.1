@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import useSite from '../api/useSite';
 import datax from "../assets/data/projects.json";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
@@ -6,8 +7,9 @@ import useWindowDimensions from "../api/useWindowDimensions";
 import OrderByDropDown from "../components/OrderByDropDown";
 
 const GridView = () => {
+  const {projectState, setProjectState} = useSite();
   const {width} = useWindowDimensions();
-  const [sortState, setSortState] = useState({value: "newest", label: "Newest"})
+  const [sortState, setSortState] = useState(projectState[1])
   const lang = "EN";
 
   let data = [...datax];
@@ -78,6 +80,15 @@ const GridView = () => {
   if (sortState.value==="title"){
       orderArrayalphabetically(data);
   }
+  
+  useEffect(() => {
+    let temp = [...projectState];
+    if (temp[1] !== sortState){
+      temp[1] = sortState;
+      setProjectState(temp);
+    }
+
+  },[sortState, projectState, setProjectState])
   
   
 
