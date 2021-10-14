@@ -9,6 +9,14 @@
         "bodyEN":"<h5>A test applying ray casting to achieve varying results</h5><p>Ray casting is a fundamental building block in rendering and game logics while being a simple yet interesting concept. I wanted to play around with it, and ended up with a quite pretty visual effect.<br><br>In ray casting 'rays' are sent outwards from a common point while detecting if a ray collides with anything. These collision points is the information that motivates the whole procedure. For example, in games collision detection can be done with ray casts: if a ray hits something and the distance to this hit point is of certain amount, it can mean a collision has happened or is about to happen. <br><br>I experimented with this, ending up with a nice shadow effect. I recommended checking out the demo and playing around with it! <br><br>The math heavy parts were inspired from different sources, such as <a target='_blank' href='http://geomalgorithms.com/'>Geometry Algorithms</a> and <a href='http://stackoverflow.com' target='_blank'>Stack OverFlow</a>.</p>",
         "date": "2020/09/10",
         "readmore": "<h5>The costs of ray casting</h5><p>The key things when it comes to the cost of ray casting are the amount of rays and the amount of objects each ray checks itself against. The problem is that if your rays are cast at static angles, like one per degree, you might cast way more rays than necessary and the accuracy can be pretty bad. You can up the amount of rays to increase accuracy, but it can get expensive and the system still wouldn't be deterministic.<br><br> I solved this problem by casting rays at each corner of the polygons. Casting three rays per vertex - one directly at the corner and two slightly off - ensures you get a accurate hits on the edge of a polygon (from cast PoV) and accurate hits on objects behind the polygon. As the polygons can overlap, it's also important to find these intersections and treat them as vertices too.<br><br>Casting rays blindly at vertices isn't an end all cure all solution as when the amount of objects grows, the amount of rays grows while also the amount objects to check against per ray grows too. If this effect were to be used in a product it definitely could use some optimizing.</p>  <img alt='Casting rays at vertices and intersections' src='raycast/raycast_example.png'></img>",
+        "images": [
+            {
+                "img": "raycast/raycast_demo2.jpg"
+            },
+            {
+                "img": "raycast/raycast_demo.jpg"
+            }
+        ],
         "readmoreimages": [
             {
                 "img": "raycast/raycast_example.png"
