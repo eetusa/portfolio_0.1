@@ -21,7 +21,7 @@
         "image": "DestructibleWorld/cube_card.jpg",
         "tags": "Unity, Unreal, C#, C++, Game engine",
         "id": "11",
-        "bodyEN":"<h5>A dynamic world out of cubes</h5><p>I wanted to develop a \"pseudo physics engine\" to create a destructible and dynamic world. The idea is to use the built-in physics of a game engine, but to use these physics in spesific ways. The world is built out of cubes that are initially static. When triggered in a certain ways they start following physics.<br><br>Single cubes can be \"activated\" from their static stage, but also larger structures can be collapsed by destroying their support or base. This is achieved by an algorithm, which upon collision checks if the nearby structure still has a connection to the ground or not. These structures break in larger chunks, giving the feel that they are not single cubes but parts of a larger structure. These chunks are generated dynamically.<br><br>I'm adding dev logs (in Finnish) to the videos section of this project. Even if you don't speak finnish, you can scroll around the video to see the system in action, or just check some screenshots.</p>",
+        "bodyEN":"<h5>A dynamic world out of cubes</h5><p>A dynamic and destructible game world. The world is built out static of single cubes that aren't aware if they are a part of a structure. A sophisticated algorithm recognises when any cubes are without support and should collapse. The same system also collapses cubes in chunks consisting of a warying amount of cubes, making the world's structures seem more conrete than they really are and the world overall more concrete than it really is.<br><br>The system works pretty well and definitely could have been expanded upon. However, it suffers from an inherent problem: a world built from singlular cubes is very expensive and doesn't scale well. At least not without some very smart systems to manage the problem. To get something out of the project after I faced the scaling issues I created the same system on Unity, Unreal Engine 4 and Unreal Engine 5 to compare different game engines. In particular, I wanted to compare how the physics engines perform and how rendering performs.<br><br>Without going into too much detail, what I found out was:</p><ul><li>PhysX (Unity, UE4) very brightly outshines Chaos (UE5) in both quality and performance</li><li>UE5 with Nanite and Lumen perform so well with a higher number of objects and dynamic lightning they seem also magical compared to the rendering performance of Unity and UE4</li><li>Unreal Engine in general handles a large amount of objects better than Unity</li></ul>",
         "date": "2021/10/07",
         "images": [
             {
@@ -32,9 +32,20 @@
             },
             {
                 "img": "DestructibleWorld/example3.jpg"
+            },
+            {
+                "img": "DestructibleWorld/ue4_1.jpg"
+            }
+            ,
+            {
+                "img": "DestructibleWorld/ue5_1.jpg"
+            }
+            ,
+            {
+                "img": "DestructibleWorld/ue5_2.jpg"
             }
         ],
-        "readmore": "<h5>Current state</h5><p>I started the project in Unity, but found out that it seemed to have problems scaling up. Unity seemed to have problems with rendering high amounts of objects and also just in general having a high amount of objects. These problems probably could have been circumvented, but also probably with a cost. I'm currently transfering the system to Unreal Engine 5. Tools to build to cube world more effeciently and materials for cubes are the next step.<h5>Inner workings of the ground seeking algorithm</p></h5><p>The ground seeking algorithm recursively calls nearby cubes until a cube finds ground, and then flags the whole group as static. If no ground has been found and no more cubes are to be found, it means the build has lost support and it collapses. The algorithm has been optimized to see if a nearby group that it is connected to has ground contact, and also to prefer looking downwards, as that is where the ground usually is. It also has been written to call each cube only once, which would otherwise be a bit of an endless loop since it's a recursive algorithm.<br><br>What could be interesting to add to the algorithm are stress points. Currently a single cube can carry the weight of thousands, but adding a stress system could make the build collapse when too much of it weights on a weak point.</p><img alt='The algorithm prefers downwards' src='DestructibleWorld/algo.jpg'></img>",
+        "readmore": "<h5>Determining if cubes have support or should collapse</h5><p>The ground seeking algorithm recursively calls nearby cubes until a cube finds ground, and then flags the whole group as static. If no ground has been found and no more cubes are to be found, it means the build has lost support and it collapses. The algorithm has been optimized to see if a nearby group that it is connected to has ground contact, and also to prefer looking downwards, as that is where the ground usually is.<br><br>What could be interesting to add to the algorithm are stress points. Currently a single cube can carry the weight of thousands, but adding a stress system could make the build collapse when too much of it weights on a weak point.</p><img alt='The algorithm prefers downwards' src='DestructibleWorld/algo.jpg'></img>",
         "videoEmbedded": "https://www.youtube.com/embed/dchaSu_SMnc"
         
     },
