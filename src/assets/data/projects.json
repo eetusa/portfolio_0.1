@@ -9,11 +9,20 @@
         "bodyEN":"<h5>A test applying ray casting to achieve varying results</h5><p>Ray casting is a fundamental building block in rendering and game logics while being a simple yet interesting concept. I wanted to play around with it, and ended up with a quite pretty visual effect.<br><br>In ray casting 'rays' are sent outwards from a common point while detecting if a ray collides with anything. These collision points is the information that motivates the whole procedure. For example, in games collision detection can be done with ray casts: if a ray hits something and the distance to this hit point is of certain amount, it can mean a collision has happened or is about to happen. <br><br>I experimented with this, ending up with a nice shadow effect. I recommended checking out the demo and playing around with it! <br><br>The math heavy parts were inspired from different sources, such as <a target='_blank' href='http://geomalgorithms.com/'>Geometry Algorithms</a> and <a href='http://stackoverflow.com' target='_blank'>Stack OverFlow</a>.</p>",
         "date": "2020/09/10",
         "readmore": "<h5>The costs of ray casting</h5><p>The key things when it comes to the cost of ray casting are the amount of rays and the amount of objects each ray checks itself against. The problem is that if your rays are cast at static angles, like one per degree, you might cast way more rays than necessary and the accuracy can be pretty bad. You can up the amount of rays to increase accuracy, but it can get expensive and the system still wouldn't be deterministic.<br><br> I solved this problem by casting rays at each corner of the polygons. Casting three rays per vertex - one directly at the corner and two slightly off - ensures you get a accurate hits on the edge of a polygon (from cast PoV) and accurate hits on objects behind the polygon. As the polygons can overlap, it's also important to find these intersections and treat them as vertices too.<br><br>Casting rays blindly at vertices isn't an end all cure all solution as when the amount of objects grows, the amount of rays grows while also the amount objects to check against per ray grows too. If this effect were to be used in a product it definitely could use some optimizing.</p>  <img alt='Casting rays at vertices and intersections' src='raycast/raycast_example.png'></img>",
+        "images": [
+            {
+                "img": "raycast/raycast_demo2.jpg"
+            },
+            {
+                "img": "raycast/raycast_demo.jpg"
+            }
+        ],
         "readmoreimages": [
             {
                 "img": "raycast/raycast_example.png"
             }
-        ]
+        ],
+        "github": "https://github.com/eetusa/raycastTests"
     }, 
     {
         "titleEN": "Destructible Cube World",
@@ -50,13 +59,24 @@
         
     },
     {
+        "titleEN": "Falling sand system",
+        "descriptionEN": "Testing out a simple falling sand system.",
+        "image": "sandspiel/sand_card.jpg",
+        "tags": "Unity, C#, Falling sand",
+        "id": "12",
+        "bodyEN":"<h5>A falling sand system</h5><p>Complexity from simplicity. That's the beauty of cellular automaton models and, as such, the beauty of falling sand games too (such as <a target='_blank' href='https://noitagame.com/'>Noita</a>). The idea is to give simple rules to single 'cells', or pixels in our case. When each pixel follow a set of rules surprisingly complex behaviours can occur. I played around a bit with the concept.<br><br>I only got to sand and water (and a 'static' element) before I ran out of time to tinker around with it more. It's decently interesting as is, but could use more elements and more optimization. You can check out the video demo.</p>",
+        "date": "2021/05/26",
+        "videoEmbedded": "https://www.youtube.com/embed/vbrezCkFj60"
+        
+    },
+    {
         "titleEN": "Remote Start Device For PC",
         "descriptionEN": "An IOT device to start your computer remotely from wherever.",
         "image": "RemoteStartSystem/box_card.jpg",
         "tags": "IOT, Arduino, 3D Printing",
         "id": "9",
         "bodyEN":"<h5>An IOT project for remotely starting your computer</h5><p>I found myself in need of access to files on my home desktop every so often and additionally sometimes wanting the computing power that the desktop has and my laptop doesn't. Instead of solving this in a sensible manner, I wanted to build a device that would help me boot up my desktop remotely.<br><br>The basic idea is that the device acts in the same role as the PC's power button does: if it closes the specific circuit on the motherboard, the computer starts (or shuts down). Physically closing and opening the circuit is done by a relay. The device needs only two functions: 'close the circuit for 1s, then open it' and the same for 5 seconds to have the option for force shutdown. <br><br>The relay is controlled by an <a target='_blank' href='https://www.arduino.cc/en/Guide/MKR1000'>Arduino MKR1000</a>, which acts as a server. As a server, it's simple to control remotely via the internet. I wrote a simple <a target='_blank' href='https://reactnative.dev/'>React Native</a> application that calls the server API.<br><br>I designed a case for the device with <a target='_blank' href='https://www.autodesk.fi/products/fusion-360/overview'>Fusion 360</a> and 3D printed it.</p>",
-        "date": "2021/10/07",
+        "date": "2021/09/11",
         "images": [
             {
                 "img": "RemoteStartSystem/box_real.jpg"
@@ -83,7 +103,8 @@
         "demotext": "If you look at the developer console, you can see the (a bit incoherent, as they were for debugging purposes) stages of the algorithm.",
         "tags": "javascript",
         "id": "1",
-        "date": "2020/08/10"
+        "date": "2020/08/10",
+        "github": "https://github.com/eetusa/CalculatorJS"
     },
     {
         "titleEN": "Slide Browser",
@@ -101,7 +122,8 @@
         "id": "7",
         "video": "slidebrowserNew.webm",
         "tags": "javascript, react, electron, java",
-        "date":"2020/11/10"
+        "date":"2020/11/10",
+        "github":"https://github.com/eetusa/SlideBrowser"
     },
     {
         "titleEN": "Chess Engine 0.9",
@@ -115,7 +137,8 @@
         "image": "chessengine/chess3.png",
         "id": "8",
         "tags": "C#",
-        "date":"2021/03/03"
+        "date":"2021/03/03",
+        "github": "https://github.com/eetusa/ChessProject"
     },
     {
         "titleEN": "Circle Collision Test",
@@ -126,7 +149,8 @@
         "demotext":"Click to spawn a ball. Press space to pause physics. Click & drag & throw balls.",
         "tags": "javascript",
         "id": "2",
-        "date": "2020/08/20"
+        "date": "2020/08/20",
+        "github": "https://github.com/eetusa/ball_physics"
     },
     {
         "titleEN": "Peek 0.9",
@@ -144,7 +168,8 @@
         "video": "minevideo.webm",
         "tags": "java",
         "id": "3",
-        "date": "2020/01/04"
+        "date": "2020/01/04",
+        "github":"https://github.com/eetusa/Peek"
     },
     {
         "titleEN": "ASCII Chess",

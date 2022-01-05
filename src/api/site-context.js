@@ -5,7 +5,7 @@ const SiteContext = createContext([{}, () => {}]);
 const SiteProvider = ({children}) => {
     
     const [state, setState] = useState({
-        projectState: ["ray_casting_tests"],
+        projectState: ["destructible_cube_world", {value: "newest", label: "Newest"}],
     })
  
 

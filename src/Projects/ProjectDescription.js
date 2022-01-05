@@ -21,11 +21,21 @@ const ProjectDescription = ({data}) => {
                 }
                 </div>
 
-                
-            
-                <div className="col-12 my-2 mx-0 px-0 order-2">
-                    <ProjectTagsSingleView tags={data.tags} />
-                </div>
+                {data.github &&
+                    <div className="col-12 my-2 mx-0 px-0 order-2 d-flex flex-row justify-content-between">
+                        <div className="gitHubLink">
+                            <span><a target="_blank" href={data.github}>GitHub</a></span>
+                        </div>
+                        <ProjectTagsSingleView tags={data.tags} />
+                    </div>
+                }
+                {!data.github &&
+                    <div className="col-12 my-2 mx-0 px-0 order-2">
+
+                        <ProjectTagsSingleView tags={data.tags} />
+                    </div>
+                }
+
             
             
             

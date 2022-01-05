@@ -691,6 +691,23 @@ ol li{
     height:100%;
 }
 
+.gitHubLink{
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.gitHubLink span{
+  font-family: 'Roboto', sans-serif;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.gitHubLink a:link{
+  color: rgb(100,100,255);
+}
+
 
 
 .taggedWith{
