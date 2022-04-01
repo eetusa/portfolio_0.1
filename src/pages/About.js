@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import ReadMore from '../components/ReadMore';
+import ExperienceList from '../components/ExperienceList';
+import ExperienceItem from '../components/ExperienceItem';
 
 
 
@@ -142,14 +144,29 @@ const About = () => {
                         alt="Me" 
                     />
                 </div>       
-                <div className="col-12 col-sm-7 m0 justify-content-center fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
-                    <p>
-                    <b>My name is Eetu Salli.</b><br></br><br></br>
+                <div className="col-12 col-sm-7 m0 fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"space-between"}}>
+                    <div style={{height: "100%", display: "flex", flexDirection:"column", justifyContent: "center"}}>
+                    <p>My name is Eetu Salli.<br></br><br></br>
 
-                    I work as a Project Researcher at Satakunta University of Applied Sciences.<br></br><br></br>
-                    I'm also getting my Bachelor's degree in Computer Science. <br></br>
-                    Prior to this field I studied mathemathics and to be a classroom teacher.
-                </p>
+                    I'm a software developer hailing from Pori, Finland.<br></br>
+                    Prior to software development field I studied mathemathics and to be a classroom teacher.<br></br><br></br></p>
+                    </div>
+                    <ExperienceList>
+                        <ExperienceItem
+                            title="Software Developer"
+                            org="Elinar Oy Ltd"
+                            start="2022, 02, 01"
+                        />
+                        <ExperienceItem
+                            title="Project Researcher"
+                            org="Satakunta University of Applied Sciences - SAMK"
+                            start="2021, 04, 01"
+                            end="2022, 02, 01"
+                        />
+                    </ExperienceList>
+                    
+                    
+                
                 </div>
             </div>
             

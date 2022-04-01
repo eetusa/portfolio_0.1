@@ -327,6 +327,7 @@ title {
   text-align: center;
 }
 
+
 .title-subtitle {
   display: flex;
   justify-content: space-evenly; 
@@ -882,4 +883,25 @@ ol li{
 .highlight-word {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
+}
+
+.experience-list {
+
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.experience-item span:first-child{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.experience-item span:nth-child(3){
+  color: #000; /* Fallback for older browsers */
+  color: rgba(0, 0, 0, 0.5);
 }
