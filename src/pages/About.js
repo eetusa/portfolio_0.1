@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
 import ReadMore from '../components/ReadMore';
 import ExperienceList from '../components/ExperienceList';
@@ -7,99 +7,122 @@ import ExperienceItem from '../components/ExperienceItem';
 
 
 const About = () => {
+    
+    const [loadTime] = useState(Date.now());
+ 
 
-    // const shuffle = (a) => {
-    //     let j, x, i;
-    //     for (i = a.length - 1; i > 0; i--) {
-    //         j = Math.floor(Math.random() * (i + 1));
-    //         x = a[i];
-    //         a[i] = a[j];
-    //         a[j] = x;
-    //     }
-    //     return a;
-    // }
-    // const generateAttributesList = (array) => {
-    //     let temp = [];
-    //     for (let i = 0 ; i < array.length ; i++){
-    //         let subtemp = [];
-    //         subtemp.push(Math.random()*45); // left
-    //         subtemp.push(5+ Math.random()*45); // right
-    //         subtemp.push(2+10*Math.random()); // duration
-    //         subtemp.push(3+4*Math.random()); // delay
-    //         temp.push(subtemp);
+    const shuffle = (a) => {
+        let j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    }
+    const generateAttributesList = (array) => {
+        let temp = [];
+        for (let i = 0 ; i < array.length ; i++){
+            let subtemp = [];
+            subtemp.push(Math.random()*45); // left 0
+            subtemp.push(5+ Math.random()*45); // right 1
+            subtemp.push(5+5*Math.random()); // duration 2
+            subtemp.push(5*Math.random()); // delay 3
+            subtemp.push(Math.random()*0.22); // opacity 4
+            subtemp.push(loadTime + (subtemp[3])*1000); // anim_start 5
+            temp.push(subtemp);
 
-    //     }
+        }
         
-    //     return temp;
-    // }
+        return temp;
+    }
+  //  console.log(loadTime)
 
-    // const interestsList = ["guitar", "music", "horror movies", "movies", "tv series", "piano", "games", "PC", "animals", "dogs", "mathemathics", "algorithms", 
-    // "Dota 2", "CS:GO", "The Witcher 3", "tattoos", "code", "technology", "rain", "sea", "summer", "books", "audio books", "fantasy",
-    // "scifi", "esports", "family", "friends", "anime", "learning", "studying", "teaching", "helping", "physics", "beer", "wine", "sauna",
-    //  "sundays", "hifi", "Pori","Rauma","Tampere","Kuopio", "JS", "Java", "Full stack"];
-    // const [interests] = useState(shuffle(shuffle(interestsList)))
-    // const [interestAttributes] = useState(generateAttributesList(interestsList))
+    const interestsList = ["guitar", "music", "horror movies", "movies", "tv series", "piano", "games", "animals", "dogs", "mathemathics", 
+    "Dota 2", "CS:GO", "The Witcher 3", "tattoos", "code", "technology", "rain", "sea", "summer", "books", "audio books", "fantasy",
+    "scifi", "esports", "family", "friends", "learning", "studying", "teaching", "helping",  "beer", "wine", "sauna",
+     "hifi", "Pori","Rauma","Tampere","Kuopio", "js", "java", "full stack",
+    "sun","C++","C#","IoT", "Arduino", "cycling", "martin"];
 
-    // const RandomInterests = () => {
-    //     return (
-    //                 <div 
-    //                 className="text-muted"
-    //                     style=
-    //                     {{
-    //                         fontSize:"10px",
-    //                         position:"relative",
-    //                         whiteSpace:"nowrap",
-    //                         height: "100px"
-    //                     }}
-    //                 >
-    //                     {interests.map ( (word, index) => {
-    //                         const positionXFirst = interestAttributes[index][0];
-    //                         const positionXSecond = interestAttributes[index][1];
-    //                         const randomDuration=interestAttributes[index][2];
-    //                         const randomDelay=interestAttributes[index][3];
-    //                         return(
-    //                             <React.Fragment key = {`${index}+${word}`}>
+    
+    const [interests] = useState(shuffle(shuffle(interestsList)));
+    const [interestAttributes] = useState(generateAttributesList(interestsList));
+
+    const getCurrentAnimationTime = (anim_start) => {
+
+        return (anim_start-Date.now())/1000;
+    }
+
+    const RandomInterests = () => {
+        return (
+                    <div 
+                    className="text-muted"
+                        style=
+                        {{
+                            fontSize:"10px",
+                            position:"relative",
+                            whiteSpace:"nowrap",
+                            height: "0px"
+                        }}
+                    >
+                        {interests.map ( (word, index) => {
+                            const positionXFirst = interestAttributes[index][0];
+                            const positionXSecond = interestAttributes[index][1];
+                            const randomDuration=interestAttributes[index][2];
+                            const randomOpacity=interestAttributes[index][4];
+                           // const randomDelay=interestAttributes[index][3];
+                       
+                           const randomDelay=getCurrentAnimationTime(interestAttributes[index][5])
+                            // const randomDelay=1
+                            // console.log(randomDelay)
+                            return(
+                                <React.Fragment key = {`${index}+${word}`}>
                                       
-    //                                             <span
-    //                                             className="fade-in"
-    //                                                 style={ 
-    //                                                     index%2===0 ? 
-    //                                                         {   
-    //                                                             animationDelay: `${randomDelay}s`,
-    //                                                             MozAnimationDelay: `${randomDelay}s`,
-    //                                                             WebkitAnimationDelay: `${randomDelay}s`,
-    //                                                             OAnimationDelay: `${randomDelay}s`,
-    //                                                             animation: `fadeIn ease ${randomDuration}s`,
-    //                                                             WebkitAnimation: `fadeIn ease ${randomDuration}s`,
-    //                                                             MozAnimation: `fadeIn ease ${randomDuration}s`,
-    //                                                             OAnimation: `fadeIn ease ${randomDuration}s`,
-    //                                                             left: `${positionXFirst}%`,
-    //                                                             color: Math.random() > 0.9 ? "#e66465" : "black",
-    //                                                         }  
-    //                                                             :
-    //                                                         {
-    //                                                             animationDelay: `${randomDelay}s`,
-    //                                                             MozAnimationDelay: `${randomDelay}s`,
-    //                                                             WebkitAnimationDelay: `${randomDelay}s`,
-    //                                                             OAnimationDelay: `${randomDelay}s`,
-    //                                                             animation: `fadeIn ease ${randomDuration}s`,
-    //                                                             WebkitAnimation: `fadeIn ease ${randomDuration}s`,
-    //                                                             MozAnimation: `fadeIn ease ${randomDuration}s`,
-    //                                                             OAnimation: `fadeIn ease ${randomDuration}s`,
-    //                                                             right: `${positionXSecond}%`,
-    //                                                             color: Math.random() > 0.9 ? "#e66465" : "black",
-    //                                                         } 
-    //                                                     }
-    //                                             >
-    //                                                 {word}
-    //                                             </span>
-    //                                           { index%2!==0 && <br></br>}
-    //                             </React.Fragment>
-    //                             )
-    //                     })}
-    //                 </div>
-    //         )
-    // }
+                                                <span
+                                                className="fade-in"
+                                                    style={ 
+                                                        index%2===0 ? 
+                                                            {   
+                                                                opacity: '0',
+                                                                animation: `fadeIn ease ${randomDuration}s forwards`,
+                                                                WebkitAnimation: `fadeIn ease ${randomDuration}s forwards `,
+                                                                MozAnimation: `fadeIn ease ${randomDuration}s forwards `,
+                                                                OAnimation: `fadeIn ease ${randomDuration}s forwards `,
+                                                                animationDelay: `${randomDelay}s`,
+                                                                MozAnimationDelay: `${randomDelay}s`,
+                                                                WebkitAnimationDelay: `${randomDelay}s`,
+                                                                OAnimationDelay: `${randomDelay}s`,
+                                                                left: `${positionXFirst}%`,
+                                                                //color: Math.random() > 0.9 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.1)",
+                                                                color : `rgba(0,0,0,${randomOpacity})`,
+                                                            }  
+                                                                :
+                                                            {
+                                                                opacity: '0',
+                                                                animation: `fadeIn ease ${randomDuration}s  forwards`,
+                                                                WebkitAnimation: `fadeIn ease ${randomDuration}s  forwards`,
+                                                                MozAnimation: `fadeIn ease ${randomDuration}s  forwards`,
+                                                                OAnimation: `fadeIn ease ${randomDuration}s  forwards`,
+                                                                animationDelay: `${randomDelay}s`,
+                                                                MozAnimationDelay: `${randomDelay}s`,
+                                                                WebkitAnimationDelay: `${randomDelay}s`,
+                                                                OAnimationDelay: `${randomDelay}s`,
+                                                                right: `${positionXSecond}%`,
+                                                               // color: Math.random() > 0.9 ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.1)",
+                                                               color : `rgba(0,0,0,${randomOpacity})`,
+                                                            } 
+                                                        }
+                                                >
+                                                    {word}
+                                                </span>
+                                              { index%2!==0 && <br></br>}
+                                </React.Fragment>
+                                )
+                        })}
+                    </div>
+            )
+    }
 
     
 
@@ -145,11 +168,14 @@ const About = () => {
                     />
                 </div>       
                 <div className="col-12 col-sm-7 m0 fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"space-between"}}>
-                    <div style={{height: "100%", display: "flex", flexDirection:"column", justifyContent: "center"}}>
-                    <p>My name is Eetu Salli.<br></br><br></br>
+                    <RandomInterests></RandomInterests>
+                    <div className="py-5" style={{height: "100%", display: "flex", flexDirection:"column", justifyContent: "center"}}>
+                    <p>
+                    My name is Eetu Salli.<br></br>
 
-                    I'm a software developer hailing from Pori, Finland.<br></br>
-                    Prior to software development field I studied mathemathics and to be a classroom teacher.<br></br><br></br></p>
+                    I'm a full stack software developer from Pori, Finland.<br></br>
+                    I'm also a problem solver, I enjoy helping and teaching other people and I love learning.
+                   </p>
                     </div>
                     <ExperienceList>
                         <ExperienceItem
@@ -177,7 +203,10 @@ const About = () => {
                     <li>interested in technology, <span data-for="music" data-type="success" className="text-success" data-tip="">music</span>, movies, <span data-for="games" data-type="error" className="text-danger" data-tip="">games</span>, tv series, family & friends</li>
                     <li>a happy owner of a Portuguese Water Dog, <span data-for='kelmi' className="text-info" data-tip='Kelmi'>Kelmi</span></li>
                 </ul>
-                <p>On my free time I dabble with different things going from game development to curiosities to utility programs to IOT devices. I have a thing for stuff related to math and algorithms and I enjoy holistics approaches to projects. I really enjoy envisioning procuts from front to back and implementing my ideas. You can see my hobby projects <a href='\projects'>here</a>.</p>
+                <p>Prior to software development I studied to be a classroom teacher and a bit of mathemathics.</p>
+                <p>On my free time I dabble with different things going from game development to curiosities to utility programs to IOT devices. 
+                    I have a thing for stuff related to math and algorithms and I enjoy holistics approaches to projects. 
+                    I really enjoy envisioning procuts from front to back and implementing my ideas. You can see my hobby projects <a href='\projects'>here</a>.</p>
                 <p>Outside of the field - among other things - I have experience as..</p>
                 <ul>
                     <li><span className="highlight-word">A classroom teacher</span> in elementary school <i>City of Rauma, City of Pori</i></li>

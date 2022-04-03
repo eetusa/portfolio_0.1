@@ -445,12 +445,8 @@ title {
     }
 
 .fade-in {
+  color: rgba(0,0,0,0);
   position: absolute;
-  animation: fadeIn ease 20s;
-  -webkit-animation: fadeIn ease 20s;
-  -moz-animation: fadeIn ease 20s;
-  -o-animation: fadeIn ease 20s;
-  -ms-animation: fadeIn ease 20s;
   }
   @keyframes fadeIn {
   0% {opacity:0;}
