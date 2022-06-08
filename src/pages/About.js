@@ -168,16 +168,17 @@ const About = () => {
                     />
                 </div>       
                 <div className="col-12 col-sm-7 m0 fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"space-between"}}>
-                    <RandomInterests></RandomInterests>
+                    {/* <RandomInterests></RandomInterests> */}
                     <div className="py-5" style={{height: "100%", display: "flex", flexDirection:"column", justifyContent: "center"}}>
                     <p>
-                    My name is Eetu Salli.<br></br>
+                    My name is Eetu Salli.<br></br><br></br>
 
-                    I'm a full stack software developer from Pori, Finland.<br></br>
-                    I'm also a problem solver, I enjoy helping and teaching other people and I love learning.
+                    I'm a software developer from Pori, Finland.<br></br>
+                    I have a BBA in Information Technology.
                    </p>
                     </div>
                     <ExperienceList>
+                        
                         <ExperienceItem
                             title="Software Developer"
                             org="Elinar Oy Ltd"
