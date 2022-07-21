@@ -143,7 +143,7 @@ const About = () => {
                         </div>   
                     
                 </div> */}
-                <div className="col-12 col-sm-5 col-lg-4 m-0 p-0 fade-in-first order-2 order-sm-2" 
+                <div className="col-12 col-sm-5 col-lg-4 m-0 p-0 fade-in-first order-2 order-sm-3" 
                     style=
                         {{
                             display: "flex",
@@ -167,7 +167,7 @@ const About = () => {
                         alt="Me" 
                     />
                 </div>       
-                <div className="col-12 col-sm-7 m0 fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"space-between"}}>
+                <div className="col-12 col-sm-7 m-0 fade-in-first order-1 order-sm-1 py-4" style={{  display: "flex", flexDirection:"column",justifyContent:"space-between"}}>
                     {/* <RandomInterests></RandomInterests> */}
                     <div className="py-5" style={{height: "100%", display: "flex", flexDirection:"column", justifyContent: "center"}}>
                     <p>
