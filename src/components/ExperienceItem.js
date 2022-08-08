@@ -48,7 +48,7 @@ const ExperienceItem = (props) => {
             months_after_years = 0;
         }
         
-        let result = "~ ";
+        let result = "· ";
         
         if (fullYears > 0){
             if (fullYears === 1){

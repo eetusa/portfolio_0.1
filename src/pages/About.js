@@ -178,11 +178,17 @@ const About = () => {
                    </p>
                     </div>
                     <ExperienceList>
+                        <ExperienceItem
+                            title="Software Developer"
+                            org="Vincit Oyj"
+                            start="2022, 08, 08"
+                        />
                         
                         <ExperienceItem
                             title="Software Developer"
                             org="Elinar Oy Ltd"
                             start="2022, 02, 01"
+                            end="2022, 08, 05"
                         />
                         <ExperienceItem
                             title="Project Researcher"
