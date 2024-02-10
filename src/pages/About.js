@@ -3,6 +3,7 @@ import ReactTooltip from 'react-tooltip';
 import ReadMore from '../components/ReadMore';
 import ExperienceList from '../components/ExperienceList';
 import ExperienceItem from '../components/ExperienceItem';
+import AgeFromDate from '../components/AgeFromDate';
 
 
 
@@ -206,7 +207,7 @@ const About = () => {
         <ReadMore>
                 <p>I'm..</p>
                 <ul style={{paddingTop:"0px"}}>
-                    <li>30 years old</li>
+                    <li><AgeFromDate birthdate={"1991-08-13"}/> years old</li>
                     <li>interested in technology, <span data-for="music" data-type="success" className="text-success" data-tip="">music</span>, movies, <span data-for="games" data-type="error" className="text-danger" data-tip="">games</span>, tv series, family & friends</li>
                     <li>a happy owner of a Portuguese Water Dog, <span data-for='kelmi' className="text-info" data-tip='Kelmi'>Kelmi</span></li>
                 </ul>
