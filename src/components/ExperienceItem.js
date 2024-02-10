@@ -10,6 +10,7 @@ const ExperienceItem = (props) => {
         var startDate=date1;
         var endDate=date2;
         var inverse=false;
+        
         if(date1>date2)
         {
             startDate=date2;
@@ -53,7 +54,7 @@ const ExperienceItem = (props) => {
         if (fullYears > 0){
             if (fullYears === 1){
                 result += "1 yr";
-            }else{
+            } else{
                 result += "" + fullYears + " yrs";
             }
 
@@ -74,11 +75,13 @@ const ExperienceItem = (props) => {
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
         const start_array = props.start.split(',');
-        const start_month = months[ start_array[1]-1 ];
         const start_year = start_array[0];
-        setStartPretty(start_month + " " + start_year)
+        const start_month_str = months[ start_array[1]-1 ];
+        const start_month = start_array[1]
+        const start_day = start_array[2];
+        setStartPretty(start_month_str + " " + start_year)
 
-        const startDate = new Date(props.start);
+        const startDate = new Date(start_year, start_month, start_day);
         let endDate = new Date();
 
         if (typeof props.end === 'undefined' ){
@@ -88,7 +91,7 @@ const ExperienceItem = (props) => {
             const end_month = months[ end_array[1]-1 ];
             const end_year = end_array[0];
             setEndPretty(end_month + " " + end_year)
-            endDate = new Date(props.end);
+            endDate = new Date(end_array[0], end_array[1], end_array[2]);
         }
 
         let months_diff = getMonthsBetween(startDate, endDate, true);
