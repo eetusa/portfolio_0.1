@@ -155,7 +155,7 @@ const About = () => {
                     <p>
                     My name is Eetu Salli.<br></br><br></br>
 
-                    I'm a software developer from Pori, Finland.<br></br>
+                    I'm a software developer from Finland.<br></br>
                     I have a BBA in Information Technology.
                    </p>
                     </div>
