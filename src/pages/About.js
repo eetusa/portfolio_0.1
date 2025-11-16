@@ -40,10 +40,10 @@ const About = () => {
     }
 
     const interestsList = ["guitar", "music", "horror movies", "movies", "tv series", "piano", "games", "animals", "dogs", "mathemathics", 
-    "Dota 2", "CS2", "The Witcher 3", "tattoos", "code", "technology", "rain", "sea", "summer", "books", "audio books", "fantasy",
-    "scifi", "esports", "family", "friends", "learning", "studying", "teaching",  "beer", "wine", "sauna",
-     "hifi", "Pori", "Sastamala","Tampere", "js", "java", "full stack", "cyber punk",
-    "sun","C++","C#","IoT", "cycling", "martin guitars", "backend"];
+    "Dota 2", "CS2", "The Witcher 3", "PUBG", "tattoos", "code", "technology", "rain", "sea", "summer", "books", "audio books", "fantasy",
+    "scifi", "esports", "family", "friends", "learning", "studying", "teaching", "sauna",
+     "hifi", "Pori", "Sastamala","Tampere", "java", "full stack", "cyber punk",
+    "sun","C++","C#","IoT", "guitars", "backend"];
 
     
     const [interests] = useState(shuffle(shuffle(interestsList)));
