@@ -179,6 +179,25 @@
         "tags": "java",
         "id": "5",
         "date":"2019/02/28"
-    }
+    },
+    {
+        "titleEN": "ARC Lens",
+        "descriptionEN": "Local computer vision applied to analyze ARC Raiders inventory and recommend keeping, selling, or recycling items in real time.",
+        "image": "arclens/screenshot_1_cropped.avif",
+        "tags": "JS, React, Vite, OpenCV, ONXX, game tooling",
+        "id": "13",
+        "date":"2026/01/12",
+"bodyEN": "<h5>ARC Lens</h5><p style='font-style: italic; margin-bottom: 1em;'>Sometimes you spend more time building a tool for a game than you actually spend playing it. Does it add up? No. Does it compute? Pretty fast.</p><p>I built <a target='_blank' href='https://arclens.app'>ARC Lens</a> to solve the inventory management struggle in <a target='_blank' href='https://store.steampowered.com/app/1808500/ARC_Raiders/'>ARC Raiders</a>. Without external tools, it is difficult to know if an item should be sold or saved for a future upgrade.</p><p>The application uses the browser's Screen Sharing API to capture a live feed of the game. It processes the video stream using <a target='_blank' href='https://opencv.org/'>OpenCV</a> & <a target='_blank' href='https://onnx.ai/'>ONNX</a> OCR to detect the item the user is hovering over. It then cross-references the item against the user's current bench levels and active quests to provide an instant 'Keep, Sell, or Recycle' recommendation.</p><p><b>Key Features:</b></p><ul><li><b>Live OCR:</b> Real-time item recognition via browser screen share.</li><li><b>Intelligent Decision Engine:</b> Analyzes your quest progression to predict exactly which items you will need for future upgrades.</li><li><b>Priority Watchlist:</b> Automatically highlights high-value loot based on a built-in priority list or your own custom targets.</li><li><b>Privacy Focused:</b> Works 100% client-side with no data sent to external servers.</li></ul>",       
+
+"images": [
+            {
+                "img": "arclens/screenshot_1.avif"
+            },
+            {
+                "img": "arclens/screenshot_2.avif"
+            }
+        ],
+"readmore": "<p><b>A fun note:</b> I originally built this as a native Python app where object detection was easy. But I quickly realized that if I wanted anyone to actually use this, it had to be a web app.</p><p>After a quick refactor, I noticed the object recognition was bad. Real bad. What was robust on desktop was flaky on the web, so I had to pivot to a strict 'tooltip detection' strategy just to get a lock on the items.</p><p>Even then, OCR was a headache. <a target='_blank' href='https://tesseract-ocr.github.io/'>Tesseract</a> struggled hard with Roman numerals (distinguishing 'II' and 'III' was a nightmare). I even spent time generating a 60k-image training dataset to fine-tune it. As expected, it made the model worse. :D</p><p>Moving to <a target='_blank' href='https://onnx.ai/'>ONNX</a> finally got things rolling. It handled multiline text very badly at first, but after tightening the dynamic crop to strictly target the item title, it started spitting out great results directly in the browser.</p>"
+}
 ]
 
