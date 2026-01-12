@@ -902,35 +902,44 @@ ol li{
 }
 
 
+/* 1. Main Fullscreen Container */
 .image-gallery-content.fullscreen {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
     width: 100vw !important;
-    height: 100vh !important;
+    /* Use dvh for mobile Safari address bar support, fallback to vh */
+    height: 100vh !important; 
+    height: 100dvh !important; 
     
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     z-index: 20000 !important;
-    background: transparent !important;
+    background: rgba(0,0,0,0.9) !important; /* Suggest adding opacity so you don't see page behind */
     margin: 0 !important;
 }
 
-.image-gallery-content.fullscreen .image-gallery-slide-wrapper {
+/* 2. Fix for Safari: Pass height down to internal wrappers */
+/* Without this, these divs collapse to 0 height on iPhone */
+.image-gallery-content.fullscreen .image-gallery-slide-wrapper,
+.image-gallery-content.fullscreen .image-gallery-swipe,
+.image-gallery-content.fullscreen .image-gallery-slides {
     width: 100% !important;
     height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
 }
 
+/* 3. Center the slide content */
 .image-gallery-content.fullscreen .image-gallery-slide {
     height: 100% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+}
+
+/* 4. Ensure the image itself behaves */
+.image-gallery-content.fullscreen .image-gallery-image {
+    max-height: 100dvh !important;
+    object-fit: contain !important; /* Ensures whole image is visible */
 }
