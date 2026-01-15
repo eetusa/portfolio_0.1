@@ -184,7 +184,7 @@
         "titleEN": "ARC Lens",
         "descriptionEN": "Local computer vision applied to analyze ARC Raiders inventory and recommend keeping, selling, or recycling items in real time.",
         "image": "arclens/screenshot_1_cropped.avif",
-        "tags": "JS, React, Vite, OpenCV, ONXX, game tooling",
+        "tags": "JS, React, Vite, PartyKit, OpenCV, ONNX, Supabase, Game Tooling",
         "id": "13",
         "date":"2026/01/12",
         "images": [
