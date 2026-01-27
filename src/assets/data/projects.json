@@ -189,6 +189,9 @@
         "date":"2026/01/12",
         "images": [
                     {
+                        "img": "arclens/splitscreen.avif"
+                    },
+                    {
                         "img": "arclens/screenshot_1.avif"
                     },
                     {
