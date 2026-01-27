@@ -911,33 +911,43 @@ ol li{
     height: 100vh !important;  /* Fallback */
     height: 100dvh !important; /* Fixes address bar jitter */
     z-index: 20000 !important;
-    background: #000 !important; /* Solid black prevents "ghosting" behind */
+    background: #000 !important;
     margin: 0 !important;
     padding: 0 !important;
+    /* Override library's top: 50% + transform centering */
+    transform: none !important;
 }
 
-/* 2. THE FIX: Force internal wrappers to fill the screen */
-/* These are the specific classes that collapse to 0px on iOS */
+/* 2. Use flexbox centering on all wrapper layers */
 .image-gallery-content.fullscreen .image-gallery-slide-wrapper,
 .image-gallery-content.fullscreen .image-gallery-swipe,
-.image-gallery-content.fullscreen .image-gallery-slides,
-.image-gallery-content.fullscreen .image-gallery-slide {
+.image-gallery-content.fullscreen .image-gallery-slides {
     height: 100% !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-/* 3. Center the image and stop it from overflowing */
+.image-gallery-content.fullscreen .image-gallery-slide {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* 3. Image as flex child - no absolute positioning */
 .image-gallery-content.fullscreen .image-gallery-image {
-    max-height: 100dvh !important; 
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
     max-width: 100vw !important;
-    width: auto !important; /* Prevent stretching */
+    width: auto !important;
     height: auto !important;
-    
-    /* Modern centering that doesn't rely on 'top: 50%' */
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
 }
