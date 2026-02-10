@@ -134,7 +134,7 @@ const GridView = () => {
                       padding: "5px",
                     }}
                   >
-                    <Link className="router-link" to={`/projects/${resource}`}>{data.title} <span>{data.displaydate}</span></Link>
+                    <Link className="router-link" to={`/projects/${resource}`}>{data.title}</Link>
                   </Card.Title>
 
                   <Card.Text className="h-20 text-muted">{data.description}</Card.Text>

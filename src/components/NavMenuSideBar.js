@@ -72,12 +72,18 @@ const NavMenuSideBar = ({navExpanded, setNavExpanded}) => {
                         to="/about">
                             <span className="mx-3 my-2">About</span>
                     </NavLink>
-                    {/* <NavLink 
-                        onClick={() => handleLinkClick()} 
-                        style={{color:"rgb(0,0,0)", fontWeight: title==="Blog" ? "bold" : "normal", }} 
+                    {/* <NavLink
+                        onClick={() => handleLinkClick()}
+                        style={{color:"rgb(0,0,0)", fontWeight: title==="Blog" ? "bold" : "normal", }}
                         to="/blog">
                             <span className="mx-3 my-2">Blog</span>
                     </NavLink> */}
+                    <NavLink
+                        onClick={() => handleLinkClick()}
+                        style={{color:"rgb(0,0,0)", fontWeight: title==="Career" ? "bold" : "normal"}}
+                        to="/career">
+                            <span className="mx-3 my-2">Career</span>
+                    </NavLink>
                     <div className="my-2" style={{display:"flex"}}>
                         <NavLink 
                             onClick={() => handleLinkClick()} 

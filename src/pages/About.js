@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
 import ReadMore from '../components/ReadMore';
-import ExperienceList from '../components/ExperienceList';
-import ExperienceItem from '../components/ExperienceItem';
 import AgeFromDate from '../components/AgeFromDate';
 
 
@@ -159,26 +157,6 @@ const About = () => {
                     I have a BBA in Information Technology.
                    </p>
                     </div>
-                    <ExperienceList>
-                        <ExperienceItem
-                            title="Software Developer"
-                            org="Vincit Oyj"
-                            start="2022, 08, 08"
-                        />
-                        
-                        <ExperienceItem
-                            title="Software Developer"
-                            org="Elinar Oy Ltd"
-                            start="2022, 02, 01"
-                            end="2022, 08, 05"
-                        />
-                        <ExperienceItem
-                            title="Project Researcher"
-                            org="Satakunta University of Applied Sciences - SAMK"
-                            start="2021, 04, 01"
-                            end="2022, 02, 01"
-                        />
-                    </ExperienceList>
                     
                     
                 

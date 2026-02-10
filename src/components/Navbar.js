@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
 
   const id = useLocation().pathname;
-  const targetList=["home","blog","about","projects","contact"];
+  const targetList=["home","blog","about","career","projects","contact"];
   let target = "";
   for (let i = 0; i < targetList.length; i++){
     if (id.indexOf(targetList[i])>-1){
@@ -50,19 +50,29 @@ const handleScroll = () => {
             >
               About
             </L>
-            {/* <L 
+            {/* <L
               className={
-                target==="blog" ? "mainNavItem mainNavItemActive" : "mainNavItem" 
+                target==="blog" ? "mainNavItem mainNavItemActive" : "mainNavItem"
               }
-              
+
               to="/blog"
             >
               Blog
             </L> */}
 
-            <L 
+            <L
               className={
-                target==="projects" ? "mainNavItem mainNavItemActive" : "mainNavItem" 
+                target==="career" ? "mainNavItem mainNavItemActive" : "mainNavItem"
+              }
+
+              to="/career"
+            >
+              Career
+            </L>
+
+            <L
+              className={
+                target==="projects" ? "mainNavItem mainNavItemActive" : "mainNavItem"
               } 
               
               to="/projects"

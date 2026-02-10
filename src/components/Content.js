@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import useWindowDimensions from "../api/useWindowDimensions";
 import useSite from "../api/useSite";
 import Home from "../pages/Home";
+import Career from "../pages/Career";
 //import Blog from "../pages/Blog";
 
 
@@ -85,6 +86,9 @@ const Content = () => {
           </Route> */}
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/career">
+            <Career />
           </Route>
           <Route path="/projects">
             <ProjectDisplay />

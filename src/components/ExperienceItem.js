@@ -105,6 +105,7 @@ const ExperienceItem = (props) => {
             <span>{props.title}</span>
             <span>{props.org}</span>
             <span>{startPretty} - {endPretty} {durationPretty}</span>
+            {props.description && <span className="experience-item-description">{props.description}</span>}
         </div>
     );
 }

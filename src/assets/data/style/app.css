@@ -901,6 +901,15 @@ ol li{
   color: rgba(0, 0, 0, 0.5);
 }
 
+.experience-item-description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.45);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
 
 /* 1. Main Container: Use dvh for iOS Safari */
 .image-gallery-content.fullscreen {
@@ -950,4 +959,160 @@ ol li{
     top: auto !important;
     left: auto !important;
     transform: none !important;
+}
+
+/* Career page */
+
+.career-sidebar {
+    padding: 2.5rem 1.5rem 2rem 0;
+}
+
+.career-total-experience {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.4);
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.career-education {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: rgba(0,0,0,0.4);
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.career-showcase {
+    border-left: 1px solid rgba(0,0,0,0.06);
+    padding: 2.5rem 0 2rem 2.5rem;
+}
+
+.career-showcase-header {
+    margin-bottom: 2rem;
+}
+
+.career-showcase-label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(0,0,0,0.35);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.career-showcase-title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    color: rgba(0,0,0,0.85);
+    line-height: 1.3;
+}
+
+.career-showcase-company {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: rgba(0,0,0,0.4);
+}
+
+.career-showcase-context {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 2.25rem;
+    padding: 1rem 1.25rem;
+    background: rgba(0,0,0,0.018);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(0,0,0,0.7);
+}
+
+.career-showcase-detail {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.38);
+}
+
+.career-showcase-section {
+    margin-bottom: 2rem;
+}
+
+.career-showcase-section-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(0,0,0,0.35);
+    margin-bottom: 1rem;
+}
+
+.career-showcase-achievements {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.career-showcase-achievements li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: rgba(0,0,0,0.7);
+}
+
+.career-showcase-achievements li:last-child {
+    margin-bottom: 0;
+}
+
+.career-showcase-achievements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+}
+
+.career-showcase-tags {
+    padding-top: 0.5rem;
+}
+
+.career-tech-tag {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    display: inline-block;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    padding: 3px 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 2px;
+    color: rgba(0,0,0,0.5);
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 576px) {
+    .career-sidebar {
+        padding: 0 0 1.5rem 0;
+    }
+    .career-showcase {
+        border-left: none;
+        padding: 0 0 2rem 0;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
 }
