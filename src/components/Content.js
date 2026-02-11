@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import GridButton from "../Projects/GridButton";
 import { Switch, Route, useLocation, Redirect } from "react-router-dom";
-import About from "../pages/About";
 import ProjectDisplay from "../Projects/ProjectDisplay";
 import Contact from "../pages/Contact";
 import useWindowDimensions from "../api/useWindowDimensions";
@@ -84,9 +83,7 @@ const Content = () => {
           {/* <Route path="/blog">
             <Blog />
           </Route> */}
-          <Route path="/about">
-            <About />
-          </Route>
+          <Route path="/about"><Redirect to="/career"/></Route>
           <Route path="/career">
             <Career />
           </Route>

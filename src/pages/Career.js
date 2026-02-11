@@ -34,11 +34,26 @@ const Career = () => {
     ];
 
     return (
-        <div className="row px-0 mx-0 fade-in-first">
+        <div className="row px-0 mx-0">
             <div className="col-12 col-sm-5 col-lg-4 mx-0 order-2 order-sm-1 career-sidebar">
-                <div className="career-total-experience">
-                    {totalExperience} in tech
+                <div className="career-profile">
+                    <div className="career-photo-clip">
+                        <div className="career-photo-circle">
+                            <img
+                                className="career-photo"
+                                src={require('../assets/images/siteimages/minakuva4.png')}
+                                alt="Eetu Salli"
+                            />
+                        </div>
+                    </div>
+                    <div className="career-profile-info">
+                        <span className="career-profile-name">Eetu Salli</span>
+                        <span className="career-profile-desc">Software Developer</span>
+                        <span className="career-profile-desc">Finland &middot; {totalExperience} in tech</span>
+                    </div>
                 </div>
+
+                <span className="career-sidebar-label">Experience</span>
                 <ExperienceList>
                     <ExperienceItem
                         title="Software Developer"
@@ -60,8 +75,11 @@ const Career = () => {
                         description="VR rehabilitation PoC, mobile apps, motion data analysis"
                     />
                 </ExperienceList>
+
+                <span className="career-sidebar-label">Education</span>
                 <div className="career-education">
-                    BBA in Information Technology — SAMK
+                    BBA in Information Technology<br />
+                    Satakunta University of Applied Sciences
                 </div>
             </div>
             <div className="col-12 col-sm-7 col-lg-8 mx-0 order-1 order-sm-2 career-showcase">

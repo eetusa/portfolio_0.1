@@ -66,12 +66,6 @@ const NavMenuSideBar = ({navExpanded, setNavExpanded}) => {
         expanded={navExpanded} 
         expand="lg">
                     <Nav className="mr-auto navbar-small" style={{'& div div': {margin:"10px"}}}>
-                    <NavLink 
-                        onClick={() => handleLinkClick()} 
-                        style={{color:"rgb(0,0,0)", fontWeight: title==="About" ? "bold" : "normal", }} 
-                        to="/about">
-                            <span className="mx-3 my-2">About</span>
-                    </NavLink>
                     {/* <NavLink
                         onClick={() => handleLinkClick()}
                         style={{color:"rgb(0,0,0)", fontWeight: title==="Blog" ? "bold" : "normal", }}

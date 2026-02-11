@@ -3,8 +3,7 @@ import React from "react";
 const ExperienceList = (props) => {
 
     return(
-        <div>
-            <h3>Experience</h3>
+        <div className="experience-list">
             {props.children}
         </div>
     );
