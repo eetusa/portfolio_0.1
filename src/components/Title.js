@@ -6,16 +6,19 @@ const eetuLetters = "Eetu".split("");
 
 const RADIUS = 1.5;
 
-const getLetterPos = (mouseX, ref, count) => {
-    if (!ref.current) return null;
-    const rect = ref.current.getBoundingClientRect();
-    const ratio = (mouseX - rect.left) / rect.width;
-    return ratio * count;
+const distToSegment = (point, a, b) => {
+    const lo = Math.min(a, b);
+    const hi = Math.max(a, b);
+    if (point >= lo && point <= hi) return 0;
+    return Math.min(Math.abs(point - lo), Math.abs(point - hi));
 };
 
-const getStrength = (pos, i) => {
+const getStrength = (pos, prev, i) => {
     if (pos === null) return 0;
-    const dist = Math.abs(pos - (i + 0.5));
+    const center = i + 0.5;
+    const dist = prev !== null
+        ? distToSegment(center, prev, pos)
+        : Math.abs(pos - center);
     return Math.max(0, 1 - dist / RADIUS);
 };
 
@@ -23,16 +26,28 @@ const Title = () => {
 
     const [salliPos, setSalliPos] = useState(null);
     const [eetuPos, setEetuPos] = useState(null);
-    const salliRef = useRef(null);
-    const eetuRef = useRef(null);
+    const prevSalliPos = useRef(null);
+    const prevEetuPos = useRef(null);
+    const containerRef = useRef(null);
 
     const handleMouseMove = useCallback((e) => {
-        const x = e.clientX;
-        setSalliPos(getLetterPos(x, salliRef, salliLetters.length));
-        setEetuPos(getLetterPos(x, eetuRef, eetuLetters.length));
-    }, []);
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const ratio = (e.clientX - rect.left) / rect.width;
+
+        const newSalliPos = ratio * salliLetters.length;
+        const newEetuPos = ratio * eetuLetters.length;
+
+        prevSalliPos.current = salliPos;
+        prevEetuPos.current = eetuPos;
+
+        setSalliPos(newSalliPos);
+        setEetuPos(newEetuPos);
+    }, [salliPos, eetuPos]);
 
     const handleMouseLeave = useCallback(() => {
+        prevSalliPos.current = null;
+        prevEetuPos.current = null;
         setSalliPos(null);
         setEetuPos(null);
     }, []);
@@ -40,6 +55,7 @@ const Title = () => {
     return (
         <Link className="title-container" to="/home">
             <div
+                ref={containerRef}
                 style={{
                     display:"grid",
                     gridTemplateColumns:"1fr",
@@ -51,7 +67,7 @@ const Title = () => {
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
             >
-                <h1 ref={salliRef} className="title" style={{
+                <h1 className="title" style={{
                     gridRow:1, gridColumn:1,
                     alignSelf:"center",
                     justifySelf:"start",
@@ -59,7 +75,7 @@ const Title = () => {
                     margin:0
                 }}>
                     {salliLetters.map((letter, i) => {
-                        const s = getStrength(salliPos, i);
+                        const s = getStrength(salliPos, prevSalliPos.current, i);
                         const opacity = 1 - s * 0.9;
                         return (
                             <span
@@ -70,7 +86,7 @@ const Title = () => {
                         );
                     })}
                 </h1>
-                <div ref={eetuRef} className="display-1" style={{
+                <div className="display-1" style={{
                     gridRow:1, gridColumn:1,
                     alignSelf:"center",
                     justifySelf:"start",
@@ -79,7 +95,7 @@ const Title = () => {
                     pointerEvents:"none"
                 }}>
                     {eetuLetters.map((letter, i) => {
-                        const s = getStrength(eetuPos, i);
+                        const s = getStrength(eetuPos, prevEetuPos.current, i);
                         const opacity = 0.1 + s * 0.75;
                         return (
                             <span
