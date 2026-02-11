@@ -732,6 +732,11 @@ ol li{
   margin-left: 10px;
   margin-right: 10px;
   font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 0;
+  max-width: 100%;
 }
 
 .taggedWith span{
@@ -1178,13 +1183,22 @@ ol li{
 
 @media (max-width: 576px) {
     .career-sidebar {
-        padding: 0 0 1.5rem 0;
+        padding: 0.5rem 1rem 1.5rem 1rem;
     }
     .career-showcase {
         border-left: none;
-        padding: 0 0 2rem 0;
+        padding: 1.5rem 1rem 2rem 1rem;
         margin-bottom: 1.5rem;
         border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .career-showcase-header {
+        margin-bottom: 1.5rem;
+    }
+    .career-showcase-label {
+        margin-bottom: 0.25rem;
+    }
+    .career-showcase-title {
+        font-size: 1.2rem;
     }
     .career-photo-clip {
         width: 85px;

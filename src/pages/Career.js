@@ -35,7 +35,7 @@ const Career = () => {
 
     return (
         <div className="row px-0 mx-0">
-            <div className="col-12 col-sm-5 col-lg-4 mx-0 order-2 order-sm-1 career-sidebar">
+            <div className="col-12 col-sm-5 col-lg-4 mx-0 order-1 order-sm-1 career-sidebar">
                 <div className="career-profile">
                     <div className="career-photo-clip">
                         <div className="career-photo-circle">
@@ -82,7 +82,7 @@ const Career = () => {
                     Satakunta University of Applied Sciences
                 </div>
             </div>
-            <div className="col-12 col-sm-7 col-lg-8 mx-0 order-1 order-sm-2 career-showcase">
+            <div className="col-12 col-sm-7 col-lg-8 mx-0 order-2 order-sm-2 career-showcase">
                 <div className="career-showcase-header">
                     <span className="career-showcase-label">Current project</span>
                     <h4 className="career-showcase-title">Lead Backend Developer</h4>
