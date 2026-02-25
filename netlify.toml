@@ -1,0 +1,13 @@
+# Proxy Umami analytics to bypass ad blockers
+# Makes analytics appear as first-party requests
+[[redirects]]
+  from = "/stats/script.js"
+  to = "https://umami-chi-eight-52.vercel.app/script.js"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/stats/*"
+  to = "https://umami-chi-eight-52.vercel.app/:splat"
+  status = 200
+  force = true
