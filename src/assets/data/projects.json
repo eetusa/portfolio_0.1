@@ -180,6 +180,30 @@
         "id": "3",
         "date": "2020/01/04",
         "github":"https://github.com/eetusa/Peek"
-    }
+    },
+    {
+      "titleEN": "Kokkaany - a Family Recipe App",
+      "descriptionEN": "A private family recipe hub where recipes can be imported from any website or Instagram screenshot, organized with tags, and browsed without the screen going dark.",
+      "image": "recipes/kokkaany1.avif",
+      "tags": "React, TypeScript, Vite, Firebase, Tailwind CSS, Gemini AI, Firecrawl, Cloud Functions",
+      "id": "14",
+      "date": "2026/02/25",
+      "images": [
+          {
+              "img": "recipes/kokkaany1.avif"
+          },
+          {
+              "img": "recipes/kokkaany2.avif"
+          },
+          {
+              "img": "recipes/kokkaany3.avif"
+          },
+          {
+              "img": "recipes/kokkaany4.avif"
+          }
+      ],
+      "bodyEN": "<h5>A Family Recipe App</h5><p style='font-style: italic; margin-bottom: 1em;'>My family's recipes lived across a dozen WhatsApp threads, random browser bookmarks, and the memories of people who consider writing things down optional. I decided to do something about it.</p><p>The app is a private, invite-only recipe hub. One place to browse, add, and rate recipes — whether from a cooking website, a food blog, or an Instagram screenshot of something that looked good at 11pm.</p><p>Adding a recipe from a URL is handled by a <a target='_blank' href='https://firebase.google.com/docs/functions'>Firebase Cloud Function</a> that first tries to pull structured data from the page's <b>JSON-LD</b> schema. Most recipe sites include this for SEO. When it's missing or incomplete, <a target='_blank' href='https://www.firecrawl.dev/'>Firecrawl</a> scrapes the rendered page and passes the result to <a target='_blank' href='https://deepmind.google/technologies/gemini/'>Google Gemini</a>, which returns the recipe as structured JSON. Most recipe pages import in a few seconds.</p><p><b>Features:</b></p><ul><li><b>URL Import:</b> Paste a link and the scraper pipeline (JSON-LD → Gemini fallback) fills in the form, including the recipe image.</li><li><b>Tags & Filtering:</b> Recipes are tagged and the home page has a facet filter — useful once the collection gets large.</li><li><b>Screen Wake Lock:</b> Uses the Wake Lock API to keep the screen on while reading. No more tapping the display with floury hands.</li><li><b>Ratings & Comments:</b> Family members can rate and comment on recipes, synced live via Firestore's <code>onSnapshot</code>.</li></ul>",
+      "readmore": "<p>The scraping pipeline went through a couple of iterations. The first version just sent the URL straight to Gemini and hoped for the best. It worked fine on clean recipe sites, but fell apart on anything heavily JavaScript-rendered — the model would get confused by all the surrounding noise. Adding Firecrawl as a pre-processing step fixed that; it handles JS rendering and returns clean markdown before Gemini even sees the page.</p><p>JSON-LD is worth trying first because if it's there, the data is already structured and Gemini doesn't need to be called at all — faster and cheaper. In practice about half of mainstream recipe sites have usable JSON-LD. The rest go through Gemini.</p><p>The Wake Lock API ended up being one of the most appreciated features. Turns out nobody wants to unlock their phone mid-recipe just because the screen went dark.</p><p>The app runs on Firebase Hosting with Firebase Authentication — it's not public. Firestore rules keep the security model simple: authenticated users can read and write, only the recipe's creator can delete it.</p>"
+  }
 ]
 
