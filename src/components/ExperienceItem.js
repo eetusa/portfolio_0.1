@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const ExperienceItem = (props) => {
-    const [startPretty, setStartPretty] = useState("Feb 2022");
-    const [endPretty, setEndPretty] = useState("Present");
-    const [durationPretty, setDurationPretty] = useState("1 yr");
+const parseDate = (date) => {
+    const [year, month, day] = date.split('-').map(Number);
+    return new Date(year, month - 1, day);
+};
 
-    function getMonthsBetween(date1,date2,roundUpFractionalMonths)
+const formatMonthAndYear = (date) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${months[date.getMonth()]} ${date.getFullYear()}`;
+};
+
+const getMonthsBetween = (date1,date2,roundUpFractionalMonths) =>
     {
         var startDate=date1;
         var endDate=date2;
@@ -36,7 +41,7 @@ const ExperienceItem = (props) => {
         return (inverse?-1:1)*(yearsDifference*12+monthsDifference+monthCorrection);
     };
 
-    const getPrettyDuration = (months) => {
+const getPrettyDuration = (months) => {
         let fullYears = Math.floor(months / 12);
         let months_after_years = months % 12;
 
@@ -69,44 +74,39 @@ const ExperienceItem = (props) => {
         
         if (result.length < 4) result = "";
         return result;
-    }
+    };
 
-    useEffect(() => {
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-        const start_array = props.start.split(',');
-        const start_year = start_array[0];
-        const start_month_str = months[ start_array[1]-1 ];
-        const start_month = start_array[1]
-        const start_day = start_array[2];
-        setStartPretty(start_month_str + " " + start_year)
-
-        const startDate = new Date(start_year, start_month, start_day);
-        let endDate = new Date();
-
-        if (typeof props.end === 'undefined' ){
-            setEndPretty("Present");
-        } else {
-            const end_array = props.end.split(',');
-            const end_month = months[ end_array[1]-1 ];
-            const end_year = end_array[0];
-            setEndPretty(end_month + " " + end_year)
-            endDate = new Date(end_array[0], end_array[1], end_array[2]);
-        }
-
-        let months_diff = getMonthsBetween(startDate, endDate, true);
-        let pretty_duration = getPrettyDuration(months_diff);
-        setDurationPretty(pretty_duration);
-
-    }, [props.start, props.end])
+const ExperienceItem = ({
+    title,
+    org,
+    start,
+    end,
+    description,
+    isSelected,
+    controlsId,
+    onSelect,
+}) => {
+    const startDate = parseDate(start);
+    const endDate = end ? parseDate(end) : new Date();
+    const startPretty = formatMonthAndYear(startDate);
+    const endPretty = end ? formatMonthAndYear(endDate) : 'Present';
+    const durationPretty = getPrettyDuration(getMonthsBetween(startDate, endDate, true));
 
     return(
-        <div className="experience-item">
-            <span>{props.title}</span>
-            <span>{props.org}</span>
-            <span>{startPretty} - {endPretty} {durationPretty}</span>
-            {props.description && <span className="experience-item-description">{props.description}</span>}
-        </div>
+        <li className="experience-list-item">
+            <button
+                type="button"
+                className={`experience-item${isSelected ? ' experience-item-selected' : ''}`}
+                aria-pressed={isSelected}
+                aria-controls={controlsId}
+                onClick={onSelect}
+            >
+                <span className="experience-item-title">{title}</span>
+                <span>{org}</span>
+                <span className="experience-item-date">{startPretty} - {endPretty} {durationPretty}</span>
+                {description && <span className="experience-item-description">{description}</span>}
+            </button>
+        </li>
     );
 }
 

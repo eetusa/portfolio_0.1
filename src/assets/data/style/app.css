@@ -907,22 +907,55 @@ ol li{
 }
 
 .experience-list {
+    list-style: none;
+    padding-left: 0;
     margin-bottom: 1.5rem;
 }
 
-.experience-item {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
+.experience-list-item {
+    margin: 0;
 }
 
-.experience-item span:first-child{
+.experience-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.75rem;
+    border: 0;
+    border-left: 2px solid transparent;
+    border-radius: 2px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.experience-item:hover {
+    background: rgba(0,0,0,0.025);
+}
+
+.experience-item:focus {
+    outline: none;
+}
+
+.experience-item:focus-visible {
+    outline: 2px solid rgba(0,0,0,0.22);
+    outline-offset: 2px;
+}
+
+.experience-item-selected {
+    background: rgba(0,0,0,0.035);
+    border-left-color: rgba(0,0,0,0.38);
+}
+
+.experience-item-title {
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-.experience-item span:nth-child(3){
+.experience-item-date {
   color: #000; /* Fallback for older browsers */
   color: rgba(0, 0, 0, 0.5);
 }
@@ -1003,7 +1036,7 @@ ol li{
 }
 
 .career-photo-clip {
-    width: 110px;
+    width: 130px;
     height: 130px;
     overflow: hidden;
     flex-shrink: 0;
@@ -1181,7 +1214,7 @@ ol li{
     letter-spacing: 0.01em;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
     .career-sidebar {
         padding: 0.5rem 1rem 1.5rem 1rem;
     }
@@ -1201,7 +1234,7 @@ ol li{
         font-size: 1.2rem;
     }
     .career-photo-clip {
-        width: 85px;
+        width: 100px;
         height: 100px;
     }
     .career-photo-circle {
