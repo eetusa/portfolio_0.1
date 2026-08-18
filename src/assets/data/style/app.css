@@ -1119,6 +1119,7 @@ ol li{
     font-size: 0.85rem;
     color: rgba(0,0,0,0.55);
     line-height: 1.5;
+    padding-left: 0.75rem;
 }
 
 .career-showcase {
